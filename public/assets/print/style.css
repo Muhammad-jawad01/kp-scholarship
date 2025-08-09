@@ -1,0 +1,170 @@
+/* reset */
+@import url('./font.css');
+
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
+.wrap {
+  width: 98%;
+}
+
+.top_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.top_header .image {
+  width: 300px;
+}
+
+.top_header h4 {
+  width: 55%;
+  text-align: center;
+  font-weight: bold;
+  /* text-decoration: underline; */
+  line-height: 1;
+}
+
+.top_header .image img {
+  width: 100%;
+  height: 100%;
+}
+
+/* header print */
+.top_header_print {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.top_header_print .image {
+  width: 250px;
+}
+
+.top_header_print h4 {
+  width: 75%;
+  text-align: center;
+  font-weight: 700;
+  text-decoration: underline;
+  line-height: 1.4;
+}
+
+.top_header_print .image img {
+  width: 100%;
+  height: 100%;
+}
+
+/*  */
+
+.table_head {
+  background-color: #eee;
+  padding: 5px 10px;
+  margin: 0;
+}
+
+.table_section {
+  margin-bottom: 15px;
+}
+
+.table_section table {
+  width: 100%;
+}
+
+.table_section.education table th,
+.table_section.education table td {
+  text-align: center;
+}
+
+.table_section table th,
+.table_section table td {
+  font-size: 0.7rem;
+  text-align: left;
+  padding: 5px;
+  line-height: 1.2;
+  border: thin solid #eee;
+  width: 150px;
+}
+
+.table_section2 {
+  margin: 50px 0 10px 0;
+}
+
+.table_section2 table th,
+.table_section2 table td {
+  font-size: 0.7rem;
+  text-align: left;
+  padding: 5px;
+  line-height: 1.2;
+  width: 200px;
+}
+
+/* page */
+
+html {
+  font: 16px/1 "Open Sans", sans-serif;
+  overflow: auto;
+  margin-top: 20px;
+}
+
+html {
+  background: #fff;
+  cursor: default;
+  overflow: auto;
+}
+
+body {
+  box-sizing: border-box;
+  height: auto;
+  margin: 0 auto;
+  overflow: auto;
+  width: 8.5in;
+}
+
+body {
+  border-radius: 1px;
+  overflow: hidden;
+  padding: 10px 20px;
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+
+  body {
+    padding: 10px 20px;
+  }
+
+  .top_header {
+    display: none;
+  }
+
+  .top_header_print {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+
+  }
+
+  .table_head_div {
+    width: 100%;
+    height: 100px;
+  }
+
+  .table_foot_div {
+    width: 100%;
+    height: 20px;
+    /* background-color: red; */
+    border-top: 1px dashed #000;
+  }
+}
+
+@page {
+  margin: 0;
+}

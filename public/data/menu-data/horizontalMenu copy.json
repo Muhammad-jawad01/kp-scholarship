@@ -1,0 +1,114 @@
+{
+  "menu": [
+    {
+      "name": "Dashboards",
+      "icon": "home",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "dashboard/analytics",
+          "name": "Analytics",
+          "icon": "activity",
+          "slug": "dashboard-analytics"
+        },
+        {
+          "url": "dashboard/ecommerce",
+          "name": "eCommerce",
+          "icon": "shopping-cart",
+          "slug": "dashboard-ecommerce"
+        }
+      ]
+    },
+
+    {
+      "name": "Charts & Maps",
+      "icon": "bar-chart-2",
+      "dropdown": "1",
+      "slug": "",
+      "submenu": [
+        {
+          "name": "Charts",
+          "icon": "pie-chart",
+          "slug": "",
+          "submenu": [
+            {
+              "url": "chart/apex",
+              "name": "Apex",
+              "icon": "circle",
+              "slug": "chart-apex"
+            },
+            {
+              "url": "chart/chartjs",
+              "name": "Chartjs",
+              "icon": "circle",
+              "slug": "chart-chartjs"
+            }
+          ]
+        },
+        {
+          "url": "maps/leaflet",
+          "name": "Leaflet Maps",
+          "icon": "map",
+          "slug": "map-leaflet"
+        }
+      ]
+    },
+    {
+      "name": "Misc",
+      "icon": "more-horizontal",
+      "dropdown": "1",
+      "slug": "",
+      "submenu": [
+        {
+          "name": "Menu Levels",
+          "icon": "menu",
+          "slug": "",
+          "submenu": [
+            {
+              "name": "Second Level 2.1",
+              "icon": "circle",
+              "slug": ""
+            },
+            {
+              "name": "Second Level 2.2",
+              "icon": "circle",
+              "slug": "",
+              "submenu": [
+                {
+                  "name": "Third Level 3.1",
+                  "icon": "circle",
+                  "slug": ""
+                },
+                {
+                  "name": "Third Level 3.2",
+                  "icon": "circle",
+                  "slug": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Disabled Menu",
+          "icon": "eye-off",
+          "classlist": "disabled",
+          "slug": "disabled"
+        },
+        {
+          "url": "https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation/documentation-laravel-folder-structure.html",
+          "name": "Documentation",
+          "icon": "folder",
+          "slug": "documentation",
+          "newTab": true
+        },
+        {
+          "url": "https://pixinvent.ticksy.com/",
+          "name": "Raise Support",
+          "icon": "life-buoy",
+          "slug": "raise-support",
+          "newTab": true
+        }
+      ]
+    }
+  ]
+}

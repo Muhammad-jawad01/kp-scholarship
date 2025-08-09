@@ -1,0 +1,188 @@
+/* LARGE SCREEN */
+@media (min-width:991px) and (max-width:1199px) {
+
+    .btn-grn-grd,
+    .btn-grn-outline {
+        font-size: 0.9rem !important;
+        padding: 10px 15px !important;
+    }
+}
+
+
+
+
+@media (max-width:767px) {
+    .navbar .nav-link:after {
+        left: 30% !important;
+    }
+
+    .heading {
+        font-size: 2rem !important;
+    }
+
+    .sectionPadding {
+        padding: 30px 10px !important;
+    }
+
+    .sectionHead {
+        font-size: 1.6rem !important;
+    }
+
+    .sectionDes {
+        font-size: 0.8rem !important;
+    }
+
+    .banner-section {
+        padding: 0px !important;
+    }
+
+    .banner-section .banner-header-text {
+        padding: 20px !important;
+    }
+
+    .banner-section .banner-header-text p {
+        font-size: 0.8rem !important;
+    }
+
+    .banner-section .banner-header-text .btn-section {
+        flex-direction: column;
+    }
+
+    .banner-section .banner-header-text .btn-section .btn {
+        width: 100% !important;
+        margin: 5px 0;
+    }
+
+    .banner-statistic-list.top li {
+        justify-content: flex-start;
+    }
+
+    .banner-statistic-list li p {
+        text-align: center;
+        line-height: 1.1;
+    }
+
+    .find-scholarship .find-scholarship-form {
+        padding: 20px !important;
+    }
+
+    .help-slider {
+        padding: 10px !important;
+    }
+
+    .help-slider .help-slider-item {
+        padding: 20px 10px !important;
+    }
+
+    .help-slider .slick-next {
+        right: 0 !important;
+    }
+
+    .help-slider .slick-dots {
+        margin-top: -20px;
+    }
+
+    .transform-future {
+        padding: 30px 10px !important;
+    }
+
+    .feature-scholarship-card .lab-price {
+        top: 25% !important;
+    }
+
+    .listItemDesign li {
+        padding: 10px !important;
+    }
+
+    .listItemDesign li .icon {
+        margin-right: 5px;
+    }
+
+
+}
+
+/* MEDIUM SCREEN */
+@media (min-width:768px) and (max-width:991px) {
+    .navbar .nav-link:after {
+        left: 30% !important;
+    }
+
+    .heading {
+        font-size: 2rem !important;
+    }
+
+    .sectionPadding {
+        padding: 30px 10px !important;
+    }
+
+    .sectionHead {
+        font-size: 1.6rem !important;
+    }
+
+    .sectionDes {
+        font-size: 0.8rem !important;
+    }
+
+    .banner-section {
+        padding: 0px !important;
+        min-height: 500px !important;
+    }
+
+    .banner-section .banner-header-text {
+        padding: 20px !important;
+    }
+
+    .banner-section .banner-header-text p {
+        font-size: 0.8rem !important;
+    }
+
+    .banner-section .banner-header-text .btn-section {
+        flex-direction: column;
+    }
+
+    .banner-section .banner-header-text .btn-section .btn {
+        width: 100% !important;
+        margin: 5px 0;
+    }
+
+    .banner-statistic-list.top li {
+        justify-content: flex-start;
+    }
+
+    .banner-statistic-list li p {
+        text-align: center;
+        line-height: 1.1;
+    }
+
+    .find-scholarship .find-scholarship-form {
+        padding: 20px !important;
+    }
+
+
+    .help-slider .help-slider-item {
+        padding: 20px 10px !important;
+    }
+
+    .help-slider .slick-dots {
+        margin-top: -20px;
+    }
+
+    .transform-future {
+        padding: 30px 10px !important;
+    }
+}
+
+
+
+
+
+/* SMALL SCREEN */
+@media (min-width:576px) and (max-width:767px) {}
+
+
+
+
+/* EXTRA SMALL SCREEN */
+@media (min-width:375px) and (max-width:575px) {}
+
+@media (max-width:375px) {}

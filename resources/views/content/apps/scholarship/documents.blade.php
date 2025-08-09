@@ -1,0 +1,217 @@
+@extends('layouts/contentLayoutMaster')
+
+@section('title', 'KPEF Scholarship Form')
+
+@section('vendor-style')
+{{-- Vendor Css files --}}
+
+<link rel="stylesheet" href="{{ asset(mix('vendors/css/pickers/flatpickr/flatpickr.min.css')) }}">
+@endsection
+
+@section('page-style')
+{{-- Page Css files --}}
+<link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/pickers/form-flat-pickr.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-validation.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/katex.min.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/monokai-sublime.min.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/quill.snow.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/quill.bubble.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-quill-editor.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('css/base/pages/app-user.css')) }}">
+<style>
+    .table td, .table th {
+        padding: 0.52rem 5px !important;
+    }
+    .table th{
+        text-align: center;
+
+    }
+
+   
+</style>
+@endsection
+
+@section('content')
+<!-- users edit start -->
+    <form action="">
+        <div class="row">
+            <div class="col-md-11 mx-auto">
+                {{-- mian form --}}
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="content-header-title border-0">Supporting Documents to be submitted to KPEF Scholarship Scheme</h2>
+                        <h5 class="content-header-title border-0">Application form</h5>
+                        <hr />
+                    </div>
+                </div>
+
+             
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table my-2 table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>S. No</th>
+                                    <th>SUPPORTING DOCUMENTS</th>
+                                    <th>Upload File</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablebody">
+                                <tr>
+                                    <th>1</th>
+                                    <td>Copy of Applicant CNIC/B.FORM</td>
+                                    <td><input type="file" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>Copy of CNIC(Father, Mother/Guardian)</td>
+                                    <td><input type="file" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td>Salary Slip/Income Certificate (Father/Guardian, Mother)</td>
+                                    <td><input type="file" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <td>Copies of last six-month utility bills (Electricity Gas, Telephone, water)
+                                        (if applicable) </td>
+                                    <td><input type="file" class="form-control"></td>
+                                </tr>
+
+                                <tr>
+                                    <th>5</th>
+                                    <td>Copy of Rent Agreement in case of Rented House</td>
+                                    <td><input type="file" class="form-control"></td>
+                                </tr>
+
+                                <tr>
+                                    <th>6</th>
+                                    <td>Copies of Last Fee Receipts of Applicant and Siblings 
+                                        (if applicable )</td>
+                                    <td><input type="file" class="form-control"></td>
+                                </tr>
+
+                                <tr>
+                                    <th>7</th>
+                                    <td>Copies of Medical Bills/expenditure related documents 
+                                        (if applicable )</td>
+                                    <td><input type="file" class="form-control"></td>
+                                </tr>
+
+                                <tr>
+                                    <th>8</th>
+                                    <td>01 Passport size Photograph of Applicant </td>
+                                    <td><input type="file" class="form-control"></td>
+                                </tr>
+                            
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="content-header-title border-0 my-1">Undertaking</h2>
+                        <hr />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="list-group">
+                            <li class="list-group-item">1.	The information given in this application is true to the best of my knowledge and I understand any incorrect information will result in the cancellation of this application. If any information given in this application is found incorrect or false, after grant of financial assistance. The institute will stop further assistance and the student will have to refund all payment received and or penalty equal to total scholarship amount.</li>
+                            <li class="list-group-item">2.	KPEF and Institution reserve the right to use information given in this form for verification and other purposes.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Date</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="">Father/ Guardian Signature ________________________________________</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Date</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="">Father/ Guardian Signature ________________________________________</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="content-header-title border-0 my-2">For Official Use</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>Application Form Complete with supporting documents</td>
+                                    <td width="200"></td>
+                                    <td>Application Case Review Date</td>
+                                    <td width="200"></td>
+                                </tr>
+
+                                <tr>
+                                    <td>The notices furnished to the applicant for furnishing of required documentation</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Signature of the Focal Person  Date</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mx-auto my-3">
+                       <button class="btn btn-success  btn-block">Submit</button>
+                    </div>
+                </div>
+
+
+
+                
+                {{-- ./ mian form --}}
+
+            </div>
+        </div>
+    </form>
+
+<!-- users edit ends -->
+@endsection
+
+
+
+@section('page-script')
+{{-- Page js files --}}
+<script src="{{ asset(mix('js/scripts/components/components-navs.js')) }}"></script>
+<script src="{{ asset(mix('js/scripts/pages/app-slide-create.js')) }}"></script>
+
+
+
+@endsection
