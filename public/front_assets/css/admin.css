@@ -1,26 +1,100 @@
+
+html,
+body {
+    background-color: transparent !important;
+}
+
+.btn-grn-grd {
+    padding: 10px 20px;
+    font-weight: 600 !important;
+    color: #fff !important;
+    border-radius: 10px !important;
+    background: linear-gradient(90deg, #10B981 0%, #14B8A6 100%);
+}
+
+.cardState {
+    box-shadow: 0px 10px 15px -3px #0000001A, 0px 4px 6px -4px #0000001A !important;
+    border-radius: 24px !important;
+    padding: 20px;
+}
+
+.cardState .card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardState .card-body .icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+}
+
+.cardState .card-body .text {
+    font-weight: 700;
+}
+
+.cardState .card-body .icon .feather {
+    width: 2rem !important;
+    height: 2rem !important;
+}
+
+.cardState .card-body h4 {
+    font-size: 2rem;
+}
+
+.total {
+    background: linear-gradient(135deg, #DBEAFE 0%, #E0F2FE 100%);
+    color: #2563EB;
+}
+
+.pending {
+    background: linear-gradient(135deg, #FEF3C7 0%, #FEF9C3 100%);
+    color: #D97706;
+}
+
+.approve {
+    background: linear-gradient(135deg, #D1FAE5 0%, #CCFBF1 100%);
+    color: #059669;
+}
+
+.rejected {
+    background: linear-gradient(135deg, #FEE2E2 0%, #FFE4E6 100%);
+    color: #DC2626;
+
+}
+
+
+/*  */
 .btn-solid-green {
     background: linear-gradient(90deg, #D1FAE5 0%, #CCFBF1 100%);
-    color: #047857;
+    color: #047857 !important;
     font-weight: 500;
-    padding: 10px 20px !important;
-    border-radius: 16px;
+    padding: 15px 20px !important;
+    border-radius: 16px !important;
+
+
 }
 
 .btn-solid-blue {
     background: linear-gradient(90deg, #DBEAFE 0%, #E0F2FE 100%);
-    color: #1D4ED8;
+    color: #1D4ED8 !important;
     font-weight: 500;
-    padding: 10px 20px !important;
-    border-radius: 16px;
+    padding: 15px 20px !important;
+    border-radius: 16px !important;
 }
 
 .applayScholarShip {
-    box-shadow: 0px 10px 15px -3px #0000001A, 0px 4px 6px -4px #0000001A;
-    border-radius: 24px;
+    box-shadow: 0px 10px 15px -3px #0000001A, 0px 4px 6px -4px #0000001A !important;
+    border-radius: 24px !important;
     border: 0;
-    padding: 20px;
+    padding: 10px !important;
     margin-bottom: 20px;
 }
+
 
 .applayScholarShip h3 {
     font-size: 1.2rem;
@@ -33,6 +107,10 @@
     font-weight: 500;
     border-radius: 30px;
     margin-left: 8px;
+}
+
+.applayScholarShip h3 .scholarShip-status i {
+    margin-right: 5px !important;
 }
 
 
@@ -108,4 +186,219 @@
     margin-bottom: 0;
     font-size: 0.9rem;
     color: #1F2937;
+}
+
+/*  */
+.userDashboard {
+    padding: 5rem 2rem 0 !important;
+}
+
+.main-menu.menu-light .navigation li a {
+    padding: 15px 20px !important;
+    border-radius: 16px !important;
+}
+
+.main-menu.menu-light .navigation li a svg {
+    width: 35px !important;
+    height: 35px !important;
+    padding: 10px;
+    border-radius: 10px !important;
+    background-color: #F3F4F6;
+}
+
+.main-menu.menu-light .navigation>li.active>a {
+    background: linear-gradient(90deg, #D1FAE5 0%, #CCFBF1 100%) !important;
+    box-shadow: 0px 10px 15px -3px #0000001A, 0px 4px 6px -4px #0000001A !important;
+    color: #047857 !important;
+    font-weight: 600 !important;
+
+}
+
+.main-menu.menu-light .navigation>li.active>a svg {
+    color: #047857 !important;
+    background: #FFFFFF99;
+
+}
+
+.main-menu {
+    overflow: auto !important;
+}
+
+.main-menu .main-menu-content {
+    border-radius: 15px;
+    overflow: hidden;
+
+}
+
+.main-menu .main-menu-content {
+    max-height: 500px !important;
+}
+
+
+
+.navbar-floating .header-navbar-shadow {
+    display: none !important;
+}
+
+.main-menu.menu-light .navigation>li>a {
+    margin: 0 5px !important;
+}
+
+.formCard {
+    border-radius: 16px !important;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="email"] {
+    border-color: #E5E7EB80 !important;
+    padding: 20px !important;
+    border-radius: 16px !important;
+    background-color: #F9FAFBCC !important;
+}
+
+select {
+    border-color: #E5E7EB80 !important;
+    /* padding: 20px !important; */
+    border-radius: 16px !important;
+    background-color: #F9FAFBCC !important;
+    height: 40px !important;
+}
+
+.table:not(.table-dark):not(.table-light) tfoot:not(.thead-dark) th,
+.table:not(.table-dark):not(.table-light) thead:not(.thead-dark) th {
+    background: #D1FAE5 !important;
+    color: #047857 !important;
+}
+
+
+.feature-scholarship-card {
+    border: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 10px 15px -3px #0000001A;
+}
+
+input[type="radio"]:checked~.feature-scholarship-card .btn {
+    background: transparent !important;
+    border: 1px solid #047857 !important;
+    color: #047857 !important;
+}
+
+.feature-scholarship-card .card-body {
+    padding: 20px;
+}
+
+.feature-scholarship-card .card-title {
+    font-size: 1rem;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    max-height: 50px;
+    line-height: 1.5;
+    -webkit-box-orient: vertical;
+    margin-bottom: 0 !important;
+    font-weight: 700;
+}
+
+.feature-scholarship-card .card-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.feature-scholarship-card .detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.feature-scholarship-card .detail span {
+    color: var(--text);
+    font-weight: var(--light);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+}
+
+
+
+.feature-scholarship-card .detail h5 {
+    margin-bottom: 0;
+    font-weight: 700;
+    color: #047857;
+}
+
+.feature-scholarship-card .deadline {
+    font-size: 0.8rem;
+    color: #6B7280;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.feature-scholarship-card .deadline svg,
+.feature-scholarship-card .detail span svg {
+    margin-right: 5px;
+}
+
+.feature-scholarship-card .deadline.icon svg {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.feature-scholarship-card .deadline.icon.green svg {
+    background-color: #D1FAE5;
+    color: var(--grn);
+}
+
+.feature-scholarship-card .deadline.icon {
+    font-size: 1rem;
+}
+
+.feature-scholarship-card .deadline.icon.blue svg {
+    background-color: #E0F2FE;
+    color: var(--blue);
+}
+
+.feature-scholarship-card .lab-type,
+.feature-scholarship-card .lab-open {
+    position: absolute;
+    top: 10px;
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    border-radius: 30px;
+    font-weight: var(--medium);
+}
+
+.feature-scholarship-card .lab-type.purple {
+    background-color: #F3E8FF;
+    color: #7E22CE;
+}
+
+.feature-scholarship-card .lab-type {
+    left: 10px;
+}
+
+.feature-scholarship-card .lab-price {
+    position: absolute;
+    top: 35%;
+    right: 20px;
+    background-color: #fff;
+    color: #047857 !important;
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    border-radius: 30px;
+}
+
+
+.feature-scholarship-card .lab-open {
+    right: 10px;
+    background-color: #22C55E;
+    color: #fff;
 }
