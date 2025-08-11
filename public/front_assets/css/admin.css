@@ -1,0 +1,111 @@
+.btn-solid-green {
+    background: linear-gradient(90deg, #D1FAE5 0%, #CCFBF1 100%);
+    color: #047857;
+    font-weight: 500;
+    padding: 10px 20px !important;
+    border-radius: 16px;
+}
+
+.btn-solid-blue {
+    background: linear-gradient(90deg, #DBEAFE 0%, #E0F2FE 100%);
+    color: #1D4ED8;
+    font-weight: 500;
+    padding: 10px 20px !important;
+    border-radius: 16px;
+}
+
+.applayScholarShip {
+    box-shadow: 0px 10px 15px -3px #0000001A, 0px 4px 6px -4px #0000001A;
+    border-radius: 24px;
+    border: 0;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.applayScholarShip h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.applayScholarShip h3 .scholarShip-status {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 30px;
+    margin-left: 8px;
+}
+
+
+
+.applayScholarShip h3 .scholarShip-status.pending {
+    color: #92400E !important;
+    background: #FEF3C7;
+}
+
+.applayScholarShip h3 .scholarShip-status.approve {
+    color: #065F46 !important;
+    background: #D1FAE5;
+}
+
+.applayScholarShip h3 .scholarShip-status.rejected {
+    color: #991B1B !important;
+    background: #FEE2E2;
+}
+
+.applayScholarShip h4 {
+    font-size: 1rem;
+    color: #4B5563;
+}
+
+.scholarShipCardItem {
+    width: 100%;
+    padding: 10px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #F9FAFB;
+    margin-top: 20px;
+}
+
+.scholarShipCardItem .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.scholarShipCardItem .icon.green {
+    color: #065F46 !important;
+    background: #D1FAE5;
+}
+
+.scholarShipCardItem .icon.purple {
+    background: #EDE9FE;
+    color: #7C3AED;
+}
+
+.scholarShipCardItem .icon.blue {
+    background: #E0F2FE;
+    color: #1D4ED8;
+}
+
+.scholarShipCardItem .icon svg {
+    font-size: 1rem;
+}
+
+.scholarShipCardItem .text p {
+    margin-bottom: 0;
+    font-weight: 500;
+    color: var(--text);
+    font-size: 0.8rem;
+}
+
+.scholarShipCardItem .text h4 {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #1F2937;
+}

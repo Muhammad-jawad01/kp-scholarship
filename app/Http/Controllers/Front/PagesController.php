@@ -2,36 +2,54 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Http\Controllers\Controller;
+use App\Models\FAQ;
+use App\Models\Book;
+use App\Models\News;
+use App\Models\Page;
+use App\Models\Team;
+use App\Models\Event;
+use App\Models\Slide;
+use App\Models\College;
+use App\Models\Gallary;
+use App\Models\Student;
+use App\Models\Weather;
 use App\Models\Category;
 use App\Models\Download;
-use Illuminate\Http\Request;
-use App\Models\Page;
-use App\Models\News;
-use App\Models\Gallary;
-use App\Models\University;
-use App\Models\UniversityDetails;
-use App\Models\College;
-use App\Models\CollegeDetails;
-use App\Models\Slide;
-use App\Models\News as NewsModel;
-use App\Models\Book;
 use App\Models\Facility;
-use App\Models\Event;
+use App\Models\Department;
+use App\Models\University;
 use App\Models\ContactBook;
-use App\Models\FAQ;
 use App\Models\Scholarship;
-use App\Models\Team;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use App\Models\Weather;
+use Illuminate\Http\Request;
+use App\Models\CollegeDetails;
+use App\Models\News as NewsModel;
+use App\Models\UniversityDetails;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class PagesController extends Controller
 {
 
     public function index()
     {
-        return View('front.pages.index');
+        $stats = [
+            'scholarships' => Scholarship::count(),
+            'students_helped' => Student::count(),
+            'departments' => Department::count(),
+        ];
+        $featuredScholarships = Scholarship::orderBy('created_at', 'desc')->take(4)->get();
+        $departments = Department::all();
+        $deadlines = [
+            ['value' => 'today', 'label' => 'Today'],
+            ['value' => 'week', 'label' => 'This Week'],
+            ['value' => 'month', 'label' => 'This Month'],
+            ['value' => 'all', 'label' => 'All Deadlines'],
+        ];
+        $testimonials = Team::where('type', 'testimonials')->get();
+        // dd($testimonials);
+
+        return View('front.pages.home.index', compact('stats', 'featuredScholarships', 'departments', 'deadlines', 'testimonials'));
     }
 
     public function contact_us()
@@ -76,6 +94,7 @@ class PagesController extends Controller
 
     public function college_details($collegeId)
     {
+
         $pageData = Page::where('slug', 'education')->firstorfail();
         $collegeDetails = DB::table('college_details')
             ->where('college_id', $collegeId)
@@ -83,10 +102,35 @@ class PagesController extends Controller
             ->paginate(20);
         return view('front.pages.colleges.details', compact('pageData', 'collegeDetails'));
     }
+    public function scholarshipsDetails($scholarshipsId)
+    {
+        $pageData = Page::where('slug', 'education')->first() ?? new Page(['title' => 'Scholarship Details']);
+
+        $scholarshipsDetail = Scholarship::where('slug', $scholarshipsId)
+            ->with(['media', 'department'])
+            ->firstOrFail();
+
+        return view('front.pages.scholarship-details', compact('scholarshipsDetail', 'pageData'));
+    }
 
     public function scholarships()
     {
-        return view('front.pages.scholarships.index');
+        $stats = [
+            'scholarships' => Scholarship::count(),
+            'students_helped' => Student::count(),
+            'departments' => Department::count(),
+        ];
+        $scholarships = Scholarship::all();
+        $departments = Department::all();
+        $deadlines = [
+            ['value' => 'today', 'label' => 'Today'],
+            ['value' => 'week', 'label' => 'This Week'],
+            ['value' => 'month', 'label' => 'This Month'],
+            ['value' => 'all', 'label' => 'All Deadlines'],
+        ];
+
+        $pageData = Page::where('slug', 'scholarships')->first();
+        return view('front.pages.scholarship', compact('scholarships', 'pageData', 'stats', 'departments', 'deadlines'));
     }
 
     public function books()
@@ -454,5 +498,22 @@ class PagesController extends Controller
     {
 
         return view('front.pages.work');
+    }
+
+    public function search(Request $request)
+    {
+        $query = Scholarship::query();
+        if ($request->filled('department_id')) {
+            $query->where('department_id', $request->department_id);
+        }
+        if ($request->filled('deadline')) {
+            // Example: filter by deadline logic
+            // $query->where('deadline', ...);
+        }
+        if ($request->filled('keyword')) {
+            $query->where('name', 'like', '%' . $request->keyword . '%');
+        }
+        $results = $query->get();
+        return view('front.pages.search', compact('results'));
     }
 }

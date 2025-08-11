@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="{{ asset(mix('vendors/css/pickers/flatpickr/flatpickr.min.css')) }}">
 @endsection
 
-@section('page-style') <select multiple class="form-control" id="eligible_districts" name="eligible_districts[]">
+@section('page-style')
+
+
+
+    {{-- <select multiple class="form-control" id="eligible_districts" name="eligible_districts[]">
         @foreach ($districts as $district)
             <option value="{{ $district->id }}"
                 {{ in_array($district->id, old('eligible_districts', $scholarship->eligible_districts ?? [])) ? 'selected' : '' }}>
@@ -40,27 +44,37 @@
         <div class="card">
             <div class=" mx-3">
                 <h1 class="mt-3">Edit Scholarship</h1>
-                <form method="POST" action="{{ route('admin.scholarship.update', $scholarship->id) }}">
+                <form method="POST" action="{{ route('admin.scholarship.update', $scholarship->id) }}"
+                    enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
                     <!-- Basic Information -->
                     <div class="row">
+
                         <div class="col-12">
                             <h4 class="mt-3 mb-3">Basic Information</h4>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" class="form-control" id="name" name="name"
                                     value="{{ old('name', $scholarship->name) }}" required>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="slug" class="form-label">Slug</label>
                                 <input type="text" class="form-control" id="slug" name="slug"
                                     value="{{ old('slug', $scholarship->slug) }}" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="award_amount" class="form-label">Award Amount</label>
+                                <input type="number" step="0.01" class="form-control" id="award_amount"
+                                    name="award_amount" value="{{ old('award_amount', $scholarship->award_amount) }}"
+                                    required>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -69,7 +83,39 @@
                                 <textarea class="form-control" id="description" name="description" rows="4" required>{{ old('description', $scholarship->description) }}</textarea>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="department_id" class="form-label">Department</label>
+                                <select class="form-control" id="department_id" name="department_id">
+                                    <option value="">Select Department</option>
+                                    @foreach (App\Models\Department::all() as $department)
+                                        <option value="{{ $department->id }}"
+                                            {{ old('department_id', $scholarship->department_id) == $department->id ? 'selected' : '' }}>
+                                            {{ $department->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="type" class="form-label">Scholarship Type</label>
+                                <select class="form-control" id="type" name="type">
+                                    <option value="">Select Type</option>
+                                    <option value="Merit-based"
+                                        {{ old('type', $scholarship->type) == 'Merit-based' ? 'selected' : '' }}>
+                                        Merit-based</option>
+                                    <option value="Need-based"
+                                        {{ old('type', $scholarship->type) == 'Need-based' ? 'selected' : '' }}>Need-based
+                                    </option>
+                                    <option value="Poor"
+                                        {{ old('type', $scholarship->type) == 'Poor' ? 'selected' : '' }}>Poor</option>
+                                    <option value="Other"
+                                        {{ old('type', $scholarship->type) == 'Other' ? 'selected' : '' }}>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="year" class="form-label">Year</label>
                                 <input type="date" class="form-control" id="year" name="year"
@@ -77,19 +123,7 @@
                                     required>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <div class="custom-control custom-switch custom-switch-primary">
-                                    <p class="mb-50">Status</p>
-                                    <input type="checkbox" name="status" class="custom-control-input" id="customSwitch10"
-                                        {{ old('status', $scholarship->status) ? 'checked' : '' }} />
-                                    <label class="custom-control-label" for="customSwitch10">
-                                        <span class="switch-icon-left"><i data-feather="check"></i></span>
-                                        <span class="switch-icon-right"><i data-feather="x"></i></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
 
                     <!-- Application Period -->
@@ -97,7 +131,20 @@
                         <div class="col-12">
                             <h4 class="mt-4 mb-3">Application Period</h4>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <div class="custom-control custom-switch custom-switch-primary">
+                                    <p class="mb-50">Status</p>
+                                    <input type="checkbox" name="status" class="custom-control-input"
+                                        id="customSwitch10" {{ old('status', $scholarship->status) ? 'checked' : '' }} />
+                                    <label class="custom-control-label" for="customSwitch10">
+                                        <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                        <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="application_start_date" class="form-label">Application Start Date</label>
                                 <input type="date" class="form-control" id="application_start_date"
@@ -105,7 +152,7 @@
                                     value="{{ old('application_start_date', $scholarship->application_start_date ? $scholarship->application_start_date->format('Y-m-d') : '') }}">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="application_end_date" class="form-label">Application End Date</label>
                                 <input type="date" class="form-control" id="application_end_date"
@@ -151,7 +198,9 @@
                                     @php
                                         $selectedLevels = old(
                                             'required_education_levels',
-                                            $scholarship->required_education_levels ?? [],
+                                            is_array($scholarship->required_education_levels)
+                                                ? $scholarship->required_education_levels
+                                                : json_decode($scholarship->required_education_levels ?? '[]', true),
                                         );
                                     @endphp
                                     <option value="matriculation"
@@ -341,7 +390,9 @@
                                     @php
                                         $selectedDistricts = old(
                                             'eligible_districts',
-                                            $scholarship->eligible_districts ?? [],
+                                            is_array($scholarship->eligible_districts)
+                                                ? $scholarship->eligible_districts
+                                                : json_decode($scholarship->eligible_districts ?? '[]', true),
                                         );
                                     @endphp
                                     @foreach (\App\Models\Districts::where('is_deleted', 0)->get() as $district)
@@ -393,6 +444,19 @@
                             <div class="mb-3">
                                 <label for="terms_and_conditions" class="form-label">Terms and Conditions</label>
                                 <textarea class="form-control" id="terms_and_conditions" name="terms_and_conditions" rows="4">{{ old('terms_and_conditions', $scholarship->terms_and_conditions) }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upload/Manage Supporting Documents -->
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="mt-4 mb-3">Upload/Manage Supporting Documents</h4>
+                            <div class="" id="app">
+                                {{ BsForm::media('scholarship-mdeia')->unlimited()->collection('scholarship-mdeia')->files($scholarship->getMediaResource('scholarship-mdeia')) }}
+
+                                <small class="form-text text-muted">You can upload or manage multiple files. Accepted
+                                    formats: PDF, JPG, PNG.</small>
                             </div>
                         </div>
                     </div>

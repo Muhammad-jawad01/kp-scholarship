@@ -14,7 +14,7 @@ use GuzzleHttp\Psr7\Request;
 // })->name('index.page');
 
 
-Route::get('/', [PagesController::class, 'index']);
+Route::get('/', [PagesController::class, 'index'])->name('index.page');
 // Route::get('{page}/{slug}', [PagesController::class, 'function']);
 Route::post('sendemail', [ContactController::class, 'sendemail']);
 Route::get('contact-us', [PagesController::class, 'contact_us']);
@@ -33,6 +33,9 @@ Route::group(['prefix' => 'projects'], function () {
     Route::get('{slug}', [ProjectController::class, 'details']);
 });
 
+
+Route::get('/scholarships', [PagesController::class, 'scholarships'])->name('scholarships.pages');
+Route::get('/scholarships/{id}', [PagesController::class, 'scholarshipsDetails'])->name('scholarships.pages.details');
 
 
 
@@ -74,6 +77,8 @@ Route::get('/downloads', [PagesController::class, 'download_tenders'])->name('pa
 Route::get('/downloads/kpyouthpolicy', [PagesController::class, 'download_kp_youth_policy'])->name('pages.downloads.kp-youth-policy');
 
 //About Us
+Route::get('/about', [PagesController::class, 'aboutus'])->name('pages.about');
+
 Route::get('/aboutus/{slug}', [PagesController::class, 'dynamic'])->name('pages.aboutus.dynamic');
 
 //Contact Us
@@ -101,13 +106,13 @@ Route::get('/Alumni', [PagesController::class, 'alumni'])->name('pages.alumni');
 
 
 //Organization Registration
-Route::resource('organization', OrganizationController::class);
-Route::resource('youth-carnival', YouthCarnivalController::class);
-Route::get('youth/carnival/result', [YouthCarnivalController::class, 'result']);
-Route::post('getCompetitionCategory', [YouthCarnivalController::class, 'getCompetitionCategory'])->name('getCompetitionCategory');
-Route::get('getSubCompetitionCategory', [YouthCarnivalController::class, 'getSubCompetitionCategory'])->name('getSubCompetitionCategory');
-Route::get('getLevelCompetitionCategory', [YouthCarnivalController::class, 'getLevelCompetitionCategory'])->name('getLevelCompetitionCategory');
-Route::get('getResult', [YouthCarnivalController::class, 'getResult'])->name('getResult');
+// Route::resource('organization', OrganizationController::class);
+// Route::resource('youth-carnival', YouthCarnivalController::class);
+// Route::get('youth/carnival/result', [YouthCarnivalController::class, 'result']);
+// Route::post('getCompetitionCategory', [YouthCarnivalController::class, 'getCompetitionCategory'])->name('getCompetitionCategory');
+// Route::get('getSubCompetitionCategory', [YouthCarnivalController::class, 'getSubCompetitionCategory'])->name('getSubCompetitionCategory');
+// Route::get('getLevelCompetitionCategory', [YouthCarnivalController::class, 'getLevelCompetitionCategory'])->name('getLevelCompetitionCategory');
+// Route::get('getResult', [YouthCarnivalController::class, 'getResult'])->name('getResult');
 // Route::group(['prefix' => 'event'], function () {
 //     Route::get('/', [EventController::class, 'index']);
 //     Route::get('{slug}', [EventController::class, 'details']);
@@ -130,13 +135,13 @@ Route::get('sports/events', [PagesController::class, 'sports_events'])->name('sp
 Route::get('youth-affairs/events', [PagesController::class, 'youth_affairs_events'])->name('youth.affairs.events');
 
 //Hospital Section
-Route::group(['prefix' => 'hospitals'], function () {
-    Route::get('{slug}', [HospitalController::class, 'index']);
-});
+// Route::group(['prefix' => 'hospitals'], function () {
+//     Route::get('{slug}', [HospitalController::class, 'index']);
+// });
 
 
 // Youth affairs Gallery
-Route::get('youth-affairs/gallery/', [PagesController::class, 'youth_affairs_gallery'])->name('youth.affairs.gallery');
+// Route::get('youth-affairs/gallery/', [PagesController::class, 'youth_affairs_gallery'])->name('youth.affairs.gallery');
 
 // Pages Section
 Route::group(['prefix' => 'pages'], function () {

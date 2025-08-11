@@ -143,9 +143,9 @@ class TeamController extends Controller
         unset($data['_method']);
         unset($data['media']);
 
-        Team::where('id', $id)->update($data);
+        $team = Team::findorfail($id);
+        $team->update($data);
 
-        $team = Team::find($id);
         $team->addAllMediaFromTokens();
 
         Alert::toast("Team Upated Successfully", 'success');
