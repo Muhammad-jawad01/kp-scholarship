@@ -3,44 +3,42 @@
 @section('title', 'KP Scholarship Apply')
 
 @section('vendor-style')
-    {{-- Vendor Css files --}}
+{{-- Vendor Css files --}}
 
-    <link rel="stylesheet" href="{{ asset(mix('vendors/css/pickers/flatpickr/flatpickr.min.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('vendors/css/pickers/flatpickr/flatpickr.min.css')) }}">
 @endsection
 
 @section('page-style')
-    {{-- Page Css files --}}
-    <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/pickers/form-flat-pickr.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-validation.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/katex.min.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/monokai-sublime.min.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/quill.snow.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/quill.bubble.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-quill-editor.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('css/base/pages/app-user.css')) }}">
+{{-- Page Css files --}}
+<link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/pickers/form-flat-pickr.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-validation.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/katex.min.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/monokai-sublime.min.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/quill.snow.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('vendors/css/editors/quill/quill.bubble.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-quill-editor.css')) }}">
+<link rel="stylesheet" href="{{ asset(mix('css/base/pages/app-user.css')) }}">
 
-    <style>
-        .table td,
-        .table th {
-            padding: 0.52rem 5px !important;
-        }
-    </style>
+<style>
+    .table td,
+    .table th {
+        padding: 0.52rem 5px !important;
+    }
+</style>
 @endsection
 
 @section('content')
 
-    <!-- users edit start -->
-    @php
 
-    @endphp
 
-    <div class="card mt-5">
-        <form action="{{ route('general_info.store') }}" method="POST">
-            @csrf
-            <div class="row">
-                <div class="col-md-11 mx-auto">
-                    {{-- mian form --}}
+<form action="{{ route('general_info.store') }}" method="POST">
+    @csrf
+    <div class="row">
+        <div class="col-md-11 mx-auto">
 
+
+            <div class="card formCard">
+                <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
                             <h2 class="content-header-title border-0 my-2">General Information</h2>
@@ -57,13 +55,13 @@
 
                                 <select name="university_id" class="form-control">
                                     @foreach ($universities as $uni)
-                                        {{-- <option value="{{ $uni->id }}"
-                                            @if (auth('student')->user()->university_id == $uni->id) selected @endif>
-                                            {{ $uni->name }} --}}
-                                        <option value="{{ $uni->id }}"
-                                            {{ auth('student')->user()->university_id == $uni->id ? 'selected' : '' }}>
-                                            {{ $uni->name }}
-                                        </option>
+                                    {{-- <option value="{{ $uni->id }}"
+                                    @if (auth('student')->user()->university_id == $uni->id) selected @endif>
+                                    {{ $uni->name }} --}}
+                                    <option value="{{ $uni->id }}"
+                                        {{ auth('student')->user()->university_id == $uni->id ? 'selected' : '' }}>
+                                        {{ $uni->name }}
+                                    </option>
                                     @endforeach
                                 </select>
 
@@ -72,8 +70,8 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="">Degreee</label>
-                                <input type="text" class="form-control"
-                                    name="degree"value="{{ auth('student')->user()->degree }}">
+                                <input type="text" class="form-control" name="degree"
+                                    value="{{ auth('student')->user()->degree }}">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -103,8 +101,8 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="">University Reg. No</label>
-                                <input type="text" class="form-control"
-                                    name="university_reg_no"value="{{ auth('student')->user()->university_reg_no }}">
+                                <input type="text" class="form-control" name="university_reg_no"
+                                    value="{{ auth('student')->user()->university_reg_no }}">
                             </div>
                         </div>
                     </div>
@@ -119,18 +117,18 @@
 
                                 <label for="program_duration">Program Duration</label>
                                 <select name="program_duration" id="program_duration" class="form-control">
-                                    @for ($i = 1; $i <= 5; $i++)
-                                        <option value="{{ $i }}"
-                                            {{ $i == auth('student')->user()->program_duration ? 'selected' : '' }}>
-                                            {{ $i }}{{ $i == 1 ? '' : ($i == 2 ? '' : ($i == 3 ? '' : '')) }}
-                                            Year
+                                    @for ($i = 1; $i <= 5; $i++) <option value="{{ $i }}"
+                                        {{ $i == auth('student')->user()->program_duration ? 'selected' : '' }}>
+                                        {{ $i }}{{ $i == 1 ? '' : ($i == 2 ? '' : ($i == 3 ? '' : '')) }}
+                                        Year
                                         </option>
-                                    @endfor
+                                        @endfor
                                 </select>
 
                                 {{-- <select name="program_duration" id="" class="form-control">
-                                    <option value="1" {{ auth('student')->user()->program_duration == 1 ? 'selected' : '' }}>1st Semester
-                                    </option>
+                                    <option value="1" {{ auth('student')->user()->program_duration == 1 ? 'selected' : '' }}>1st
+                                Semester
+                                </option>
 
                                 </select> --}}
 
@@ -145,27 +143,22 @@
 
                                 <label for="current_semester">Program Duration</label>
                                 <select name="current_semester" id="current_semester" class="form-control">
-                                    @for ($i = 1; $i <= 10; $i++)
-                                        <option value="{{ $i }}"
-                                            {{ $i == auth('student')->user()->current_semester ? 'selected' : '' }}>
-                                            {{ $i }}{{ $i == 1 ? 'st' : ($i == 2 ? 'nd' : ($i == 3 ? 'rd' : 'th')) }}
-                                            Semester
+                                    @for ($i = 1; $i <= 10; $i++) <option value="{{ $i }}"
+                                        {{ $i == auth('student')->user()->current_semester ? 'selected' : '' }}>
+                                        {{ $i }}{{ $i == 1 ? 'st' : ($i == 2 ? 'nd' : ($i == 3 ? 'rd' : 'th')) }}
+                                        Semester
                                         </option>
-                                    @endfor
+                                        @endfor
                                 </select>
                             </div>
                         </div>
 
                     </div>
+                </div>
+            </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2 class="content-header-title border-0 my-1">Applicant information</h2>
-                            <hr />
-                        </div>
-                    </div>
-
-
+            <div class="card formCard">
+                <div class="card-body">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -184,8 +177,8 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="">Guardian Name</label>
-                                <input type="text" class="form-control"
-                                    name="guardian_name"value="{{ auth('student')->user()->guardian_name }}">
+                                <input type="text" class="form-control" name="guardian_name"
+                                    value="{{ auth('student')->user()->guardian_name }}">
                             </div>
                         </div>
 
@@ -197,10 +190,12 @@
                                 <label for="">Gender</label>
                                 <select name="gender" id="" class="form-control">
                                     <option value="Male"
-                                        {{ auth('student')->user()->gender == 'Male' ? 'selected' : '' }}>Male
+                                        {{ auth('student')->user()->gender == 'Male' ? 'selected' : '' }}>
+                                        Male
                                     </option>
                                     <option value="Female"
-                                        {{ auth('student')->user()->gender == 'Female' ? 'selected' : '' }}>Female
+                                        {{ auth('student')->user()->gender == 'Female' ? 'selected' : '' }}>
+                                        Female
                                     </option>
 
                                 </select>
@@ -210,11 +205,10 @@
                             <div class="form-group">
                                 <label for="">Date Of Birth</label>
                                 @php
-                                    $dob = optional(auth('student')->user()->date_of_birth)->format('Y-m-d');
+                                $dob = optional(auth('student')->user()->date_of_birth)->format('Y-m-d');
                                 @endphp
 
-                                <input type="date" class="form-control" name="date_of_birth"
-                                    value="{{ $dob }}">
+                                <input type="date" class="form-control" name="date_of_birth" value="{{ $dob }}">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -262,6 +256,21 @@
                         </div>
 
                     </div>
+                </div>
+            </div>
+
+            <div class="card formCard">
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="content-header-title border-0 my-1">Applicant information</h2>
+                            <hr />
+                        </div>
+                    </div>
+
+
+
 
                     <div class="row">
 
@@ -278,12 +287,12 @@
                                 <label for="">Domicile</label>
                                 <select name="domicile_district_id" id="" class="form-control">
                                     {{-- <option value="">Married</option>
-                                    <option value="">Non-Married</option> --}}
+                                        <option value="">Non-Married</option> --}}
 
                                     @foreach ($districts as $value)
-                                        <option value="{{ $value->id }}"
-                                            {{ auth('student')->user()->domicile_district_id === $value->id ? 'selected' : '' }}>
-                                            {{ $value->name }}</option>
+                                    <option value="{{ $value->id }}"
+                                        {{ auth('student')->user()->domicile_district_id === $value->id ? 'selected' : '' }}>
+                                        {{ $value->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -293,9 +302,9 @@
                             <div class="form-group">
                                 <label for="">Tehsil</label>
                                 {{-- <select name="tehsil" id="" class="form-control">
-                                    <option value="">Married</option>
-                                    <option value="">Non-Married</option>
-                                </select> --}}
+                                        <option value="">Married</option>
+                                        <option value="">Non-Married</option>
+                                    </select> --}}
                                 <input type="text" class="form-control" name="tehsil"
                                     value="{{ auth('student')->user()->tehsil }}">
 
@@ -321,9 +330,10 @@
                             </div>
                         </div>
                     </div>
-
-
-
+                </div>
+            </div>
+            <div class="card formCard">
+                <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
                             <h2 class="content-header-title border-0 my-1">Previous Education of the Applicant </h2>
@@ -347,67 +357,64 @@
                                 <tbody id="tablebody">
                                     @if ($user_edu)
 
-                                        @foreach ($user_edu as $data)
-                                            <tr>
-                                                <td>
-                                                    <input type="hidden" class="form-control"
-                                                        value="{{ $data->id }}" name="edu_id[]">
-                                                    <input type="text" class="form-control"
-                                                        value="{{ $data->level }}" name="level[]">
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control"
-                                                        value="{{ $data->institute_university_name }}"
-                                                        name="institute_university_name[]">
-                                                </td>
-                                                <td>
-                                                    <input type="number" class="form-control"
-                                                        value="{{ $data->passing_year }}" name="passing_year[]">
-                                                </td>
-                                                <!--<td>-->
-                                                <!--    <input type="text" class="form-control"-->
-                                                <!--        value="{{ $data->per_month_kpef }}"name="per_month_kpef[]">-->
-                                                <!--</td>-->
-                                                <td>
-                                                    <input type="text" class="form-control"
-                                                        value="{{ $data->total_marks_cgpa }}" name="total_marks_cgpa[]">
-                                                </td>
-                                                <td>
-                                                    <input type="text"
-                                                        class="form-control"value="{{ $data->obtained_marks_cgpa }}"
-                                                        name="obtained_marks_cgpa[]">
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-danger btn-sm remove_row"
-                                                        type="button">x</button>
-                                                </td>
-                                            </tr>
-                                        @endforeach
+                                    @foreach ($user_edu as $data)
+                                    <tr>
+                                        <td>
+                                            <input type="hidden" class="form-control" value="{{ $data->id }}"
+                                                name="edu_id[]">
+                                            <input type="text" class="form-control" value="{{ $data->level }}"
+                                                name="level[]">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control"
+                                                value="{{ $data->institute_university_name }}"
+                                                name="institute_university_name[]">
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" value="{{ $data->passing_year }}"
+                                                name="passing_year[]">
+                                        </td>
+                                        <!--<td>-->
+                                        <!--    <input type="text" class="form-control"-->
+                                        <!--        value="{{ $data->per_month_kpef }}"name="per_month_kpef[]">-->
+                                        <!--</td>-->
+                                        <td>
+                                            <input type="text" class="form-control"
+                                                value="{{ $data->total_marks_cgpa }}" name="total_marks_cgpa[]">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control"
+                                                value="{{ $data->obtained_marks_cgpa }}" name="obtained_marks_cgpa[]">
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger btn-sm remove_row" type="button">x</button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                     @else
-                                        <tr>
-                                            <td>
-                                                <input type="text" class="form-control" name="level[]">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control"
-                                                    name="institute_university_name[]">
-                                            </td>
-                                            <td>
-                                                <input type="number" class="form-control" name="passing_year[]">
-                                            </td>
-                                            <!--<td>-->
-                                            <!--    <input type="text" class="form-control" name="per_month_kpef[]">-->
-                                            <!--</td>-->
-                                            <td>
-                                                <input type="text" class="form-control" name="total_marks_cgpa[]">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" name="obtained_marks_cgpa[]">
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger btn-sm remove_row" type="button">x</button>
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control" name="level[]">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" name="institute_university_name[]">
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" name="passing_year[]">
+                                        </td>
+                                        <!--<td>-->
+                                        <!--    <input type="text" class="form-control" name="per_month_kpef[]">-->
+                                        <!--</td>-->
+                                        <td>
+                                            <input type="text" class="form-control" name="total_marks_cgpa[]">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" name="obtained_marks_cgpa[]">
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger btn-sm remove_row" type="button">x</button>
+                                        </td>
+                                    </tr>
                                     @endif
 
                                 </tbody>
@@ -422,33 +429,39 @@
                             </table>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-4 mx-auto my-3">
-                            <button class="btn btn-success  btn-block">Submit</button>
-                        </div>
-                    </div>
-
-
-                    {{-- ./ mian form --}}
-
                 </div>
             </div>
-        </form>
 
+
+
+
+
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <button class="btn btn-solid-green  btn-block">Submit</button>
+                </div>
+            </div>
+
+
+            {{-- ./ mian form --}}
+
+        </div>
     </div>
-    <!-- users edit ends -->
+</form>
+
+
+<!-- users edit ends -->
 @endsection
 
 
 
 @section('page-script')
-    {{-- Page js files --}}
-    <script src="{{ asset(mix('js/scripts/components/components-navs.js')) }}"></script>
-    <script src="{{ asset(mix('js/scripts/pages/app-slide-create.js')) }}"></script>
+{{-- Page js files --}}
+<script src="{{ asset(mix('js/scripts/components/components-navs.js')) }}"></script>
+<script src="{{ asset(mix('js/scripts/pages/app-slide-create.js')) }}"></script>
 
-    <script>
-        $(document).ready(function() {
+<script>
+    $(document).ready(function() {
             $('#addRow').click(function() {
                 let str = `
             <tr>
@@ -478,6 +491,6 @@
                 });
             });
         });
-    </script>
+</script>
 
 @endsection
