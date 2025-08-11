@@ -98,7 +98,7 @@ class Helper
 
     public static function teamTypes()
     {
-        return ['addministrator' => 'Addministrator', 'team' => 'Team', 'alumni' => 'Alumni'];
+        return ['addministrator' => 'Addministrator', 'testimonials' => 'Testimonials', 'team' => 'Team', 'alumni' => 'Alumni'];
     }
 
     public static function father_earning()
