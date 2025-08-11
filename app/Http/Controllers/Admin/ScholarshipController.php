@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Str;
 
 
 class ScholarshipController extends Controller
@@ -80,6 +81,7 @@ class ScholarshipController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'description' => 'required',
@@ -97,18 +99,39 @@ class ScholarshipController extends Controller
 
         $data = $request->all();
 
-        // Handle boolean fields
-        $data['status'] = $request->has('status') ? true : false;
-        $data['require_district_verification'] = $request->has('require_district_verification') ? true : false;
-        $data['require_signatures'] = $request->has('require_signatures') ? true : false;
+        // Auto-generate slug from name
+        $data['slug'] = Str::slug($request->name);
+
+        // Handle boolean fields (store as integer 0/1)
+        $data['status'] = $request->has('status') ? 1 : 0;
+        $data['require_district_verification'] = $request->has('require_district_verification') ? 1 : 0;
+        $data['require_signatures'] = $request->has('require_signatures') ? 1 : 0;
+        $data['requires_education_documents'] = $request->has('requires_education_documents') ? 1 : 0;
+        $data['requires_profile_document'] = $request->has('requires_profile_document') ? 1 : 0;
+        $data['requires_cnic'] = $request->has('requires_cnic') ? 1 : 0;
+        $data['requires_domicile'] = $request->has('requires_domicile') ? 1 : 0;
+        $data['requires_income_certificate'] = $request->has('requires_income_certificate') ? 1 : 0;
+        $data['requires_electricity_bill'] = $request->has('requires_electricity_bill') ? 1 : 0;
+        $data['requires_gas_bill'] = $request->has('requires_gas_bill') ? 1 : 0;
+        $data['requires_telephone_bill'] = $request->has('requires_telephone_bill') ? 1 : 0;
+        $data['requires_financial_details'] = $request->has('requires_financial_details') ? 1 : 0;
+        $data['requires_asset_details'] = $request->has('requires_asset_details') ? 1 : 0;
+        $data['requires_signature'] = $request->has('requires_signature') ? 1 : 0;
+        $data['requires_guardian_signature'] = $request->has('requires_guardian_signature') ? 1 : 0;
 
         // Handle JSON array fields
         $data['education_levels'] = $request->has('education_levels') ? json_encode($request->education_levels) : null;
         $data['eligible_districts'] = $request->has('eligible_districts') ? json_encode($request->eligible_districts) : null;
         $data['required_documents'] = $request->has('required_documents') ? json_encode($request->required_documents) : null;
 
+        // Handle award_amount and department_id
+        $data['award_amount'] = $request->input('award_amount');
+        $data['department_id'] = $request->input('department_id');
+
         unset($data['_token']);
         $scholarship = Scholarship::Create($data);
+        $scholarship->addAllMediaFromTokens();
+
         if ($scholarship) {
             Alert::toast("Scholarship Created Successfully", 'success');
             return redirect()->route('scholarship.index');
@@ -170,15 +193,34 @@ class ScholarshipController extends Controller
 
         $data = $request->all();
 
-        // Handle boolean fields
-        $data['status'] = $request->has('status') ? true : false;
-        $data['require_district_verification'] = $request->has('require_district_verification') ? true : false;
-        $data['require_signatures'] = $request->has('require_signatures') ? true : false;
+        // Auto-generate slug from name
+    $data['slug'] = Str::slug($request->name);
+
+        // Handle boolean fields (store as integer 0/1)
+        $data['status'] = $request->has('status') ? 1 : 0;
+        $data['require_district_verification'] = $request->has('require_district_verification') ? 1 : 0;
+        $data['require_signatures'] = $request->has('require_signatures') ? 1 : 0;
+        $data['requires_education_documents'] = $request->has('requires_education_documents') ? 1 : 0;
+        $data['requires_profile_document'] = $request->has('requires_profile_document') ? 1 : 0;
+        $data['requires_cnic'] = $request->has('requires_cnic') ? 1 : 0;
+        $data['requires_domicile'] = $request->has('requires_domicile') ? 1 : 0;
+        $data['requires_income_certificate'] = $request->has('requires_income_certificate') ? 1 : 0;
+        $data['requires_electricity_bill'] = $request->has('requires_electricity_bill') ? 1 : 0;
+        $data['requires_gas_bill'] = $request->has('requires_gas_bill') ? 1 : 0;
+        $data['requires_telephone_bill'] = $request->has('requires_telephone_bill') ? 1 : 0;
+        $data['requires_financial_details'] = $request->has('requires_financial_details') ? 1 : 0;
+        $data['requires_asset_details'] = $request->has('requires_asset_details') ? 1 : 0;
+        $data['requires_signature'] = $request->has('requires_signature') ? 1 : 0;
+        $data['requires_guardian_signature'] = $request->has('requires_guardian_signature') ? 1 : 0;
 
         // Handle JSON array fields
         $data['education_levels'] = $request->has('education_levels') ? json_encode($request->education_levels) : null;
         $data['eligible_districts'] = $request->has('eligible_districts') ? json_encode($request->eligible_districts) : null;
         $data['required_documents'] = $request->has('required_documents') ? json_encode($request->required_documents) : null;
+
+        // Handle award_amount and department_id
+        $data['award_amount'] = $request->input('award_amount');
+        $data['department_id'] = $request->input('department_id');
 
         unset($data['_token']);
         unset($data['_method']);
@@ -201,14 +243,13 @@ class ScholarshipController extends Controller
         }
 
         $scholarship = Scholarship::find($id);
+        $scholarship->addAllMediaFromTokens();
 
         if (!$scholarship) {
             Alert::toast('Scholarship not found', 'error');
             return redirect()->route('scholarship.index');
         }
 
-        // dd($data);
-        // Use the fill method to update the scholarship object
         $scholarship->fill($data);
 
         if ($scholarship->isDirty()) {

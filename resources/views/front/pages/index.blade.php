@@ -1,9 +1,7 @@
 @extends('front/layouts/layout')
 
-@section('title', 'Home')
+@section('title', 'Scholarship')
 @section('content')
-
-
     <!-- banner section -->
     <section class="banner-section">
         <div class="container">
@@ -41,8 +39,7 @@
                     <a class="banner-image-after">
                         <i class="fa-solid fa-graduation-cap"></i>
                     </a>
-                    <img src="{{ asset('front_assets/imgs/header_ing.svg') }}" class="img-fluid banner-image"
-                        alt="">
+                    <img src="{{ asset('front_assets/imgs/header_ing.svg') }}" class="img-fluid banner-image" alt="">
                     <a class="banner-image-before">
                         <svg width="22" height="28" viewBox="0 0 22 28" fill="none"
                             xmlns="http://www.w3.org/2000/svg">

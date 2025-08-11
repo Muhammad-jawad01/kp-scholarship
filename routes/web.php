@@ -272,3 +272,5 @@ require __DIR__ . '/student.php';
 
 // Test Routes (remove in production)
 require __DIR__ . '/test.php';
+
+Route::get('/search', [\App\Http\Controllers\Front\PagesController::class, 'search'])->name('search');

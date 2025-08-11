@@ -1,4 +1,0 @@
-{{-- BEGIN: Customizer --}}
-
-
-{{-- End: Customizer --}}

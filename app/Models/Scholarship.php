@@ -2,12 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
 
-class Scholarship extends Model
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use AhmedAliraqi\LaravelMediaUploader\Entities\Concerns\HasUploader;
+
+
+class Scholarship extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia, HasUploader;
 
     protected $guarded = ['id'];
 
@@ -75,5 +80,10 @@ class Scholarship extends Model
         }
 
         return $documents;
+    }
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
     }
 }
