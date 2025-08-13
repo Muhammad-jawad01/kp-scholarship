@@ -58,9 +58,6 @@
                     <li class="nav-item {{ Request::is('login*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('student.login') }}">Login</a>
                     </li>
-                    <li class="nav-item {{ Request::is('student.register*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('student.register') }}">Register</a>
-                    </li>
                 @endauth
                 <li class="nav-item {{ Request::is('help*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('pages.faqs') }}">Help</a>

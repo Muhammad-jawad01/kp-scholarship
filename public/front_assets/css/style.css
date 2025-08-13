@@ -1,22 +1,21 @@
-@import url('./fonts.css');
-@import url('./responsive.css');
+@import url("./fonts.css");
+@import url("./responsive.css");
 
 :root {
-    --light-grn: #A7F3D0;
+    --light-grn: #a7f3d0;
     --grn: #059669;
-    --blue: #0284C7;
-    --grn-grd: linear-gradient(90deg, #10B981 0%, #14B8A6 100%);
-    --blue-grd: linear-gradient(90deg, #38BDF8 0%, #22D3EE 100%);
-    --text: #6B7280;
+    --blue: #0284c7;
+    --grn-grd: linear-gradient(90deg, #10b981 0%, #14b8a6 100%);
+    --blue-grd: linear-gradient(90deg, #38bdf8 0%, #22d3ee 100%);
+    --text: #6b7280;
 
-    --shadow: 0px 10px 15px -3px #0000001A;
+    --shadow: 0px 10px 15px -3px #0000001a;
     --shadow2: 0px 25px 50px -12px #00000040;
     --light: 300;
     --regular: 400;
     --medium: 500;
     --lg: 700;
 }
-
 
 * {
     margin: 0;
@@ -52,14 +51,14 @@
 }
 
 .gradientHeading {
-    background: linear-gradient(90deg, #24C2DA 0%, #34D39B 100%);
+    background: linear-gradient(90deg, #24c2da 0%, #34d39b 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
 .gradientHeading2 {
-    background: linear-gradient(90deg, #059669 0%, #0D9488 50%, #0284C7 100%);
+    background: linear-gradient(90deg, #059669 0%, #0d9488 50%, #0284c7 100%);
 
     -webkit-background-clip: text;
     background-clip: text;
@@ -75,14 +74,13 @@ label {
     font-size: 0.9rem;
 }
 
-
 /* btn gradient */
 .btn-grn-grd {
     padding: 10px 20px;
     font-weight: var(--medium);
     color: #fff;
     border-radius: 10px !important;
-    background: linear-gradient(90deg, #10B981 0%, #14B8A6 100%);
+    background: linear-gradient(90deg, #10b981 0%, #14b8a6 100%);
 }
 
 .btn-grn-grd.icon {
@@ -101,7 +99,7 @@ label {
     font-weight: var(--medium);
     color: var(--grn);
     border-radius: 10px !important;
-    border-color: #A7F3D0;
+    border-color: #a7f3d0;
 }
 
 .btn-grn-outline.icon {
@@ -158,16 +156,14 @@ label {
     font-weight: var(--medium);
     color: #fff;
     border-radius: 10px !important;
-    background: linear-gradient(90deg, #0EA5E9 0%, #06B6D4 100%);
+    background: linear-gradient(90deg, #0ea5e9 0%, #06b6d4 100%);
 }
-
-
 
 /* basic end */
 
 .navbar {
-    box-shadow: 0px 1px 2px 0px #0000000D;
-    backdrop-filter: blur(12px)
+    box-shadow: 0px 1px 2px 0px #0000000d;
+    backdrop-filter: blur(12px);
 }
 
 .navbar .navbar-brand {
@@ -187,19 +183,20 @@ label {
 }
 
 .navbar .nav-link:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: #33D4A0;
-    transition: color .15s ease-in-out, width .15s ease-in-out, border-color .15s ease-in-out;
+    background-color: #33d4a0;
+    transition: color 0.15s ease-in-out, width 0.15s ease-in-out,
+        border-color 0.15s ease-in-out;
 }
 
 .navbar .nav-link:hover {
-    color: #33D4A0;
+    color: #33d4a0;
 }
 
 .navbar .nav-link:hover:after {
@@ -207,13 +204,12 @@ label {
 }
 
 .navbar .nav-item.active .nav-link {
-    color: #33D4A0;
+    color: #33d4a0;
 }
 
 .navbar .nav-item.active .nav-link:after {
     width: 60%;
 }
-
 
 .navbar-toggler {
     background-color: var(--light-grn) !important;
@@ -239,7 +235,7 @@ label {
 }
 
 .banner-section:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -20%;
@@ -266,7 +262,7 @@ label {
 }
 
 .banner-section .banner-header-text p {
-    color: #4B5563;
+    color: #4b5563;
     font-weight: var(--light);
 }
 
@@ -328,12 +324,10 @@ label {
 
 .banner-statistic-list.top li p {
     color: var(--text);
-
 }
 
 .banner-statistic-list.bottom li p {
     color: #fff;
-
 }
 
 .banner-image {
@@ -346,7 +340,7 @@ label {
     left: 0;
     width: 60px;
     height: 60px;
-    background: linear-gradient(90deg, #34D399 0%, #2DD4BF 100%);
+    background: linear-gradient(90deg, #34d399 0%, #2dd4bf 100%);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -361,7 +355,7 @@ label {
     right: 0;
     width: 60px;
     height: 60px;
-    background: linear-gradient(90deg, #38BDF8 0%, #22D3EE 100%);
+    background: linear-gradient(90deg, #38bdf8 0%, #22d3ee 100%);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -379,7 +373,7 @@ label {
 .find-scholarship .find-scholarship-form {
     padding: 40px;
     box-shadow: 0px 25px 50px -12px #00000040;
-    border: 1px solid #FFFFFF33;
+    border: 1px solid #ffffff33;
     border-radius: 24px;
 }
 
@@ -404,13 +398,11 @@ label {
     border-radius: 16px;
     border-right: 0 !important;
     color: var(--text);
-    border-color: #E5E7EB80 !important;
-
+    border-color: #e5e7eb80 !important;
 }
 
 .input-group .form-control {
     border-left: 0 !important;
-
 }
 
 .form-control {
@@ -419,14 +411,14 @@ label {
     font-weight: var(--regular);
     color: #000000;
     background: #f9fafb80;
-    border-color: #E5E7EB80 !important;
+    border-color: #e5e7eb80 !important;
     box-shadow: none !important;
 }
 
 .form-select {
     padding: 12px 15px;
     border-radius: 16px;
-    border-color: #E5E7EB80 !important;
+    border-color: #e5e7eb80 !important;
     background-color: #f9fafb80;
 }
 
@@ -441,12 +433,11 @@ label {
     height: 100%;
 }
 
-
 .feature-scholarship-card {
     border: 0;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0px 10px 15px -3px #0000001A;
+    box-shadow: 0px 10px 15px -3px #0000001a;
 }
 
 .feature-scholarship-card .card-body {
@@ -458,7 +449,8 @@ label {
     font-weight: var(--lg);
     -webkit-line-clamp: 2;
     line-clamp: 2;
-    max-height: 50px;
+    height: 50px;
+    overflow: hidden;
     line-height: 1.5;
     -webkit-box-orient: vertical;
 }
@@ -482,10 +474,7 @@ label {
     display: flex;
     justify-content: start;
     align-items: center;
-
 }
-
-
 
 .feature-scholarship-card .detail h5 {
     margin-bottom: 0;
@@ -495,7 +484,7 @@ label {
 
 .feature-scholarship-card .deadline {
     font-size: 0.8rem;
-    color: #6B7280;
+    color: #6b7280;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -516,7 +505,7 @@ label {
 }
 
 .feature-scholarship-card .deadline.icon.green svg {
-    background-color: #D1FAE5;
+    background-color: #d1fae5;
     color: var(--grn);
 }
 
@@ -525,7 +514,7 @@ label {
 }
 
 .feature-scholarship-card .deadline.icon.blue svg {
-    background-color: #E0F2FE;
+    background-color: #e0f2fe;
     color: var(--blue);
 }
 
@@ -540,23 +529,23 @@ label {
 }
 
 .feature-scholarship-card .lab-type.blue {
-    background-color: #DBEAFE;
-    color: #1D4ED8;
+    background-color: #dbeafe;
+    color: #1d4ed8;
 }
 
 .feature-scholarship-card .lab-type.green {
-    background-color: #D1FAE5;
+    background-color: #d1fae5;
     color: #047857;
 }
 
 .feature-scholarship-card .lab-type.red {
-    background-color: #FCE7F3;
-    color: #BE185D;
+    background-color: #fce7f3;
+    color: #be185d;
 }
 
 .feature-scholarship-card .lab-type.purple {
-    background-color: #F3E8FF;
-    color: #7E22CE;
+    background-color: #f3e8ff;
+    color: #7e22ce;
 }
 
 .feature-scholarship-card .lab-type {
@@ -575,19 +564,18 @@ label {
     font-weight: var(--lg);
 }
 
-
 .feature-scholarship-card .lab-open {
     right: 10px;
-    background-color: #22C55E;
+    background-color: #22c55e;
     color: #fff;
 }
 
 /* why choose */
 .PlatformCard {
-    box-shadow: 0px 10px 15px -3px #0000001A;
+    box-shadow: 0px 10px 15px -3px #0000001a;
     border-radius: 24px;
     border: 0;
-    box-shadow: 0px 10px 15px -3px #0000001A, 0px 4px 6px -4px #0000001A;
+    box-shadow: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a;
     padding: 30px;
     height: 100%;
 }
@@ -602,7 +590,7 @@ label {
 }
 
 .PlatformCard.green {
-    background: linear-gradient(135deg, #ECFDF5 0%, #F0FDFA 100%);
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 100%);
 }
 
 .PlatformCard.green .icon {
@@ -610,8 +598,7 @@ label {
 }
 
 .PlatformCard.blue {
-    background: linear-gradient(135deg, #F0F9FF 0%, #ECFEFF 100%);
-
+    background: linear-gradient(135deg, #f0f9ff 0%, #ecfeff 100%);
 }
 
 .PlatformCard.blue .icon {
@@ -619,21 +606,19 @@ label {
 }
 
 .PlatformCard.purple {
-    background: linear-gradient(135deg, #F5F3FF 0%, #FAF5FF 100%);
-
+    background: linear-gradient(135deg, #f5f3ff 0%, #faf5ff 100%);
 }
 
 .PlatformCard.purple .icon {
-    color: #7C3AED;
+    color: #7c3aed;
 }
 
 .PlatformCard.red {
-    background: linear-gradient(135deg, #FFF1F2 0%, #FDF2F8 100%);
-
+    background: linear-gradient(135deg, #fff1f2 0%, #fdf2f8 100%);
 }
 
 .PlatformCard.red .icon {
-    color: #E11D48;
+    color: #e11d48;
 }
 
 .PlatformCard .icon {
@@ -644,8 +629,7 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 10px 15px -3px #0000001A, 0px 4px 6px -4px #0000001A;
-
+    box-shadow: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a;
 }
 
 .PlatformCard .icon svg {
@@ -654,8 +638,12 @@ label {
 
 /* help me */
 .helped-me {
-    background: linear-gradient(135deg, rgba(236, 253, 245, 0.5) 0%, rgba(240, 253, 250, 0.3) 50%, rgba(240, 249, 255, 0.5) 100%);
-
+    background: linear-gradient(
+        135deg,
+        rgba(236, 253, 245, 0.5) 0%,
+        rgba(240, 253, 250, 0.3) 50%,
+        rgba(240, 249, 255, 0.5) 100%
+    );
 }
 
 .help-slider {
@@ -664,7 +652,6 @@ label {
     padding: 40px;
     box-shadow: 0px 25px 50px -12px #00000040;
     border-radius: 20px;
-
 }
 
 .help-slider .help-slider-item {
@@ -678,7 +665,7 @@ label {
 .help-slider .help-slider-item .profile-image {
     width: 100px;
     height: 100px;
-    border: 2px solid #D1FAE5;
+    border: 2px solid #d1fae5;
     border-radius: 100%;
     margin-bottom: 20px;
     overflow: hidden;
@@ -720,7 +707,7 @@ label {
     width: 30px;
     height: 30px;
     border-radius: 100px;
-    background-color: #D1FAE5 !important;
+    background-color: #d1fae5 !important;
     outline: none !important;
     border: 0 !important;
     position: absolute;
@@ -776,7 +763,7 @@ label {
 .transform-future {
     width: 100%;
     padding: 80px 40px;
-    background: url('./../imgs/future.svg') no-repeat;
+    background: url("./../imgs/future.svg") no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -787,7 +774,7 @@ footer {
 }
 
 .footer-about {
-    color: #9CA3AF;
+    color: #9ca3af;
     margin: 20px 0;
     font-weight: var(--light);
     line-height: 2;
@@ -810,8 +797,7 @@ footer {
     padding: 8px;
     color: #fff;
     font-size: 1rem;
-    transition: all .15s ease-in-out;
-
+    transition: all 0.15s ease-in-out;
 }
 
 .social li a:hover {
@@ -838,9 +824,8 @@ footer {
     color: #fff;
     text-decoration: none;
     font-weight: var(--light);
-    color: #9CA3AF;
-    transition: all .15s ease-in-out;
-
+    color: #9ca3af;
+    transition: all 0.15s ease-in-out;
 }
 
 .quick-link li a:hover {
@@ -851,7 +836,6 @@ footer {
     display: flex;
     justify-content: flex-start;
     align-items: start;
-
 }
 
 .quick-link.contact li a .icon {
@@ -866,12 +850,12 @@ footer {
 
 /* scholarship */
 .inner-page {
-    background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 50%, #ECFEFF 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #ecfeff 100%);
 }
 
 .banner-inner {
     padding: 40px;
-    background: url('./../imgs/innerpage.svg') no-repeat;
+    background: url("./../imgs/innerpage.svg") no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -892,14 +876,13 @@ footer {
     font-weight: var(--lg);
 }
 
-
 /* Detail scholarship */
 
 .scholarship-card-detail {
     border: 0;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0px 10px 15px -3px #0000001A, 0px 25px 50px -12px #00000040;
+    box-shadow: 0px 10px 15px -3px #0000001a, 0px 25px 50px -12px #00000040;
 }
 
 .scholarship-card-detail .card-body {
@@ -936,7 +919,6 @@ footer {
     display: flex;
     justify-content: start;
     align-items: center;
-
 }
 
 .scholarship-card-detail .lab-type,
@@ -950,23 +932,23 @@ footer {
 }
 
 .scholarship-card-detail .lab-type.blue {
-    background-color: #DBEAFE;
-    color: #1D4ED8;
+    background-color: #dbeafe;
+    color: #1d4ed8;
 }
 
 .scholarship-card-detail .lab-type.green {
-    background-color: #D1FAE5;
+    background-color: #d1fae5;
     color: #047857;
 }
 
 .scholarship-card-detail .lab-type.red {
-    background-color: #FCE7F3;
-    color: #BE185D;
+    background-color: #fce7f3;
+    color: #be185d;
 }
 
 .scholarship-card-detail .lab-type.purple {
-    background-color: #F3E8FF;
-    color: #7E22CE;
+    background-color: #f3e8ff;
+    color: #7e22ce;
 }
 
 .scholarship-card-detail .lab-type {
@@ -985,10 +967,9 @@ footer {
     font-weight: var(--lg);
 }
 
-
 .scholarship-card-detail .lab-open {
     right: 30px;
-    background-color: #22C55E;
+    background-color: #22c55e;
     color: #fff;
 }
 
@@ -1012,7 +993,7 @@ footer {
 
 .nav-pills .nav-link h6 {
     margin-bottom: 0 !important;
-    color: #6B7280;
+    color: #6b7280;
 }
 
 .nav-pills .nav-link .icon {
@@ -1020,21 +1001,21 @@ footer {
     height: 35px;
     border-radius: 10px;
     margin-right: 10px;
-    background-color: #F3F4F6;
+    background-color: #f3f4f6;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .nav-pills .nav-link .icon svg {
-    color: #6B7280;
+    color: #6b7280;
     font-size: 1rem;
 }
 
 .nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
-    background: linear-gradient(90deg, #D1FAE5 0%, #CCFBF1 100%);
-    box-shadow: 0px 10px 15px -3px #0000001A, 0px 4px 6px -4px #0000001A;
+.nav-pills .show > .nav-link {
+    background: linear-gradient(90deg, #d1fae5 0%, #ccfbf1 100%);
+    box-shadow: 0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a;
 }
 
 .nav-pills .nav-link.active .icon {
@@ -1049,7 +1030,7 @@ footer {
     color: var(--grn);
 }
 
-.tab-content>.tab-pane {
+.tab-content > .tab-pane {
     padding: 20px 0;
 }
 
@@ -1062,41 +1043,36 @@ footer {
     align-items: center;
 }
 
-
-
 .scholarShipItem.green {
-    background: linear-gradient(90deg, #ECFDF5 0%, #F0FDFA 100%);
+    background: linear-gradient(90deg, #ecfdf5 0%, #f0fdfa 100%);
 }
 
 .scholarShipItem.green .icon {
-    background: linear-gradient(90deg, #10B981 0%, #14B8A6 100%);
-
+    background: linear-gradient(90deg, #10b981 0%, #14b8a6 100%);
 }
 
 .scholarShipItem.purple {
-    background: linear-gradient(90deg, #F5F3FF 0%, #FAF5FF 100%);
-
+    background: linear-gradient(90deg, #f5f3ff 0%, #faf5ff 100%);
 }
 
 .scholarShipItem.purple .icon {
-    background: linear-gradient(90deg, #8B5CF6 0%, #A855F7 100%);
+    background: linear-gradient(90deg, #8b5cf6 0%, #a855f7 100%);
 }
 
 .scholarShipItem.blue {
-    background: linear-gradient(90deg, #F0F9FF 0%, #ECFEFF 100%);
-
+    background: linear-gradient(90deg, #f0f9ff 0%, #ecfeff 100%);
 }
 
 .scholarShipItem.blue .icon {
-    background: linear-gradient(90deg, #0EA5E9 0%, #06B6D4 100%);
+    background: linear-gradient(90deg, #0ea5e9 0%, #06b6d4 100%);
 }
 
 .scholarShipItem.red {
-    background: linear-gradient(90deg, #FFF1F2 0%, #FDF2F8 100%);
+    background: linear-gradient(90deg, #fff1f2 0%, #fdf2f8 100%);
 }
 
 .scholarShipItem.red .icon {
-    background: linear-gradient(90deg, #F43F5E 0%, #EC4899 100%);
+    background: linear-gradient(90deg, #f43f5e 0%, #ec4899 100%);
 }
 
 .scholarShipItem .icon {
@@ -1123,7 +1099,7 @@ footer {
 .scholarShipItem .text h4 {
     margin-bottom: 0;
     font-size: 1.1rem;
-    color: #1F2937;
+    color: #1f2937;
 }
 
 .scholarShipItem.small {
@@ -1148,7 +1124,7 @@ footer {
 
 .detailTopCard p {
     font-weight: 500;
-    color: #4B5563;
+    color: #4b5563;
     text-align: center;
     font-size: 0.9rem;
 }
@@ -1162,7 +1138,7 @@ footer {
 
 .detailTopCard .prog p {
     font-weight: 500;
-    color: #4B5563;
+    color: #4b5563;
     text-align: center;
     font-size: 0.7rem;
     margin-bottom: 5px;
@@ -1173,7 +1149,7 @@ footer {
 }
 
 .detailTopCard .progress-bar {
-    background: linear-gradient(90deg, #10B981 0%, #14B8A6 100%) !important;
+    background: linear-gradient(90deg, #10b981 0%, #14b8a6 100%) !important;
 }
 
 .detailTopCard .dead {
@@ -1184,8 +1160,8 @@ footer {
 }
 
 .card.help {
-    border: 1px solid #BAE6FD80;
-    background: linear-gradient(135deg, #F0F9FF 0%, #ECFEFF 100%);
+    border: 1px solid #bae6fd80;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ecfeff 100%);
     padding: 30px;
 }
 
@@ -1217,31 +1193,42 @@ footer {
 }
 
 .listItemDesign li.green {
-    background: linear-gradient(90deg, rgba(236, 253, 245, 0.5) 0%, rgba(240, 253, 250, 0.5) 100%);
-    border: 1px solid #D1FAE580
+    background: linear-gradient(
+        90deg,
+        rgba(236, 253, 245, 0.5) 0%,
+        rgba(240, 253, 250, 0.5) 100%
+    );
+    border: 1px solid #d1fae580;
 }
 
 .listItemDesign li.green .icon {
-    background: linear-gradient(90deg, #10B981 0%, #14B8A6 100%);
-
+    background: linear-gradient(90deg, #10b981 0%, #14b8a6 100%);
 }
 
 .listItemDesign li.blue {
-    background: linear-gradient(90deg, rgba(240, 249, 255, 0.5) 0%, rgba(236, 254, 255, 0.5) 100%);
-    border: 1px solid #D1FAE580
+    background: linear-gradient(
+        90deg,
+        rgba(240, 249, 255, 0.5) 0%,
+        rgba(236, 254, 255, 0.5) 100%
+    );
+    border: 1px solid #d1fae580;
 }
 
 .listItemDesign li.blue .icon {
-    background: linear-gradient(90deg, #0EA5E9 0%, #06B6D4 100%);
+    background: linear-gradient(90deg, #0ea5e9 0%, #06b6d4 100%);
 }
 
 .listItemDesign li.purple {
-    background: linear-gradient(90deg, rgba(245, 243, 255, 0.5) 0%, rgba(250, 245, 255, 0.5) 100%);
-    border: 1px solid #EDE9FE80
+    background: linear-gradient(
+        90deg,
+        rgba(245, 243, 255, 0.5) 0%,
+        rgba(250, 245, 255, 0.5) 100%
+    );
+    border: 1px solid #ede9fe80;
 }
 
 .listItemDesign li.purple .icon {
-    background: linear-gradient(90deg, #8B5CF6 0%, #A855F7 100%);
+    background: linear-gradient(90deg, #8b5cf6 0%, #a855f7 100%);
 }
 
 .listItemDesign li .icon {
@@ -1257,4 +1244,42 @@ footer {
 
 .listItemDesign li .icon svg {
     font-size: 0.8rem;
+}
+
+/* accordian */
+.accordion-button:not(.collapsed) {
+    border: 0;
+    background-color: transparent;
+}
+
+.accordion-item {
+    border: 0;
+    box-shadow: 0px 5px 50px -12px #00000040;
+    margin-bottom: 20px;
+    border-radius: 10px !important;
+}
+
+.accordion-item:first-of-type > .accordion-header .accordion-button {
+    font-weight: var(--lg);
+    color: #000;
+}
+
+.accordion-header {
+    border-radius: 10px !important;
+    overflow: hidden;
+}
+
+.accordion-item .accordion-body p {
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.accordion-button::after {
+    background-color: #d1fae5;
+
+    width: 30px !important;
+    height: 30px !important;
+    padding: 10px !important;
+    background-position: center;
+    border-radius: 10px;
 }

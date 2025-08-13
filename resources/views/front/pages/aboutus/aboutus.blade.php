@@ -78,7 +78,7 @@
                         <div class="content-area" style="color: var(--text);">
                             {!! $pageData->description ??
                                 '<p class="mb-4">The Directorate of Youth Affairs, Khyber Pakhtunkhwa is committed to providing educational opportunities and support to the youth of KP. Our scholarship programs aim to ensure that financial constraints do not hinder academic growth and development.</p>
-                                                            <p>We believe in the power of education to transform lives and contribute to the socio-economic development of our province. Through our initiatives, we strive to nurture talent, foster innovation, and build a brighter future for Khyber Pakhtunkhwa.</p>' !!}
+                                                                                        <p>We believe in the power of education to transform lives and contribute to the socio-economic development of our province. Through our initiatives, we strive to nurture talent, foster innovation, and build a brighter future for Khyber Pakhtunkhwa.</p>' !!}
                         </div>
                         <div class="mt-4 pt-2">
                             <div class="row g-3">
