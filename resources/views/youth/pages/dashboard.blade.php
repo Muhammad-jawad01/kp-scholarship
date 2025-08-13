@@ -2,260 +2,260 @@
 
 @section('title', 'Dashboard')
 @section('content')
-<!-- vendor css files -->
-<link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/wizard/bs-stepper.min.css')) }}">
-<link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/select/select2.min.css')) }}">
-<link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-validation.css')) }}">
-<link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-wizard.css')) }}">
-<div class="content-wrapper">
-    <div class="content-header row">
-    </div>
-    <div class="content-body">
-        {{-- @dump(Auth()->user()->name) --}}
-
-        <div class="row">
-            <div class="col-xl-12 col-md-6 col-12">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="card cardState">
-                            <div class="card-body">
-                                <div class="my-auto">
-                                    <h4 class="fw-bolder mb-0">{{ $total ?? '' }}</h4>
-                                    <p class="text">Total Applications</p>
-                                </div>
-                                <div class="icon total">
-                                    <i data-feather="box" class="avatar-icon"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card cardState">
-                            <div class="card-body">
-
-                                <div class="my-auto">
-                                    <h4 class="fw-bolder mb-0">{{ $approved ?? '' }}</h4>
-                                    <p class="text ">Approved</p>
-
-                                </div>
-                                <div class="icon approve">
-                                    <i data-feather="check-circle" class="avatar-icon"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card cardState">
-                            <div class="card-body">
-
-                                <div class="my-auto">
-                                    <h4 class="fw-bolder  mb-0">{{ $pending ?? '' }}</h4>
-                                    <p class="text ">Pending</p>
-                                </div>
-                                <div class="icon pending">
-                                    <i data-feather="refresh-cw" class="avatar-icon"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card cardState">
-                            <div class="card-body">
-                                <div class="my-auto">
-                                    <h4 class="fw-bolder mb-0">{{ $reject ?? '' }}</h4>
-                                    <p class="text ">Rejected</p>
-                                </div>
-                                <div class="icon rejected">
-                                    <i data-feather="x-circle" class="avatar-icon"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- vendor css files -->
+    <link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/wizard/bs-stepper.min.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/select/select2.min.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-validation.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-wizard.css')) }}">
+    <div class="content-wrapper">
+        <div class="content-header row">
         </div>
+        <div class="content-body">
+            {{-- @dump(Auth()->user()->name) --}}
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card applayScholarShip">
-                    <div class="card-body">
-                        <h3>Merit Scholarship Program 2024 <span class="scholarShip-status approve"><i
-                                    class="fas fa-check"></i>
-                                Approved</span>
-                            <span class="scholarShip-status pending"><i class="fas fa-history"></i>Under
-                                Review</span>
-                            <span class="scholarShip-status rejected"><i class="fas fa-close"></i>
-                                Rejected</span>
-                        </h3>
-                        </h3>
-                        <div class="row">
-                            <div class="col-md-7">
-                                <h4>Higher Education Department</h4>
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
-                                        <div class="scholarShipCardItem">
-                                            <div class="icon green">
-                                                <i class="fas fa-graduation-cap"></i>
-                                            </div>
-                                            <div class="text">
-                                                <p>Education Level</p>
-                                                <h4>Undergraduate</h4>
-                                            </div>
-                                        </div>
+            <div class="row">
+                <div class="col-xl-12 col-md-6 col-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card cardState">
+                                <div class="card-body">
+                                    <div class="my-auto">
+                                        <h4 class="fw-bolder mb-0">{{ $total ?? '' }}</h4>
+                                        <p class="text">Total Applications</p>
                                     </div>
-                                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
-                                        <div class="scholarShipCardItem">
-                                            <div class="icon purple">
-                                                <i class="fas fa-graduation-cap"></i>
-                                            </div>
-                                            <div class="text">
-                                                <p>Education Level</p>
-                                                <h4>Undergraduate</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
-                                        <div class="scholarShipCardItem">
-                                            <div class="icon blue">
-                                                <i class="fas fa-graduation-cap"></i>
-                                            </div>
-                                            <div class="text">
-                                                <p>Education Level</p>
-                                                <h4>Undergraduate</h4>
-                                            </div>
-                                        </div>
+                                    <div class="icon total">
+                                        <i data-feather="box" class="avatar-icon"></i>
                                     </div>
                                 </div>
-
                             </div>
-                            <div class="col-md-5 d-flex justify-content-end align-items-start">
-                                <button class="btn btn-solid-green mx-1">View Details</button>
-                                <button class="btn btn-solid-blue">Edit Application</button>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card cardState">
+                                <div class="card-body">
+
+                                    <div class="my-auto">
+                                        <h4 class="fw-bolder mb-0">{{ $approved ?? '' }}</h4>
+                                        <p class="text ">Approved</p>
+
+                                    </div>
+                                    <div class="icon approve">
+                                        <i data-feather="check-circle" class="avatar-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card cardState">
+                                <div class="card-body">
+
+                                    <div class="my-auto">
+                                        <h4 class="fw-bolder  mb-0">{{ $pending ?? '' }}</h4>
+                                        <p class="text ">Pending</p>
+                                    </div>
+                                    <div class="icon pending">
+                                        <i data-feather="refresh-cw" class="avatar-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card cardState">
+                                <div class="card-body">
+                                    <div class="my-auto">
+                                        <h4 class="fw-bolder mb-0">{{ $reject ?? '' }}</h4>
+                                        <p class="text ">Rejected</p>
+                                    </div>
+                                    <div class="icon rejected">
+                                        <i data-feather="x-circle" class="avatar-icon"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card applayScholarShip">
-                    <div class="card-body">
-                        <h3>Merit Scholarship Program 2024 <span class="scholarShip-status approve"><i
-                                    class="fas fa-check"></i>
-                                Approved</span>
-                            <span class="scholarShip-status pending"><i class="fas fa-history"></i>Under
-                                Review</span>
-                            <span class="scholarShip-status rejected"><i class="fas fa-close"></i>
-                                Rejected</span>
-                        </h3>
-                        </h3>
-                        <div class="row">
-                            <div class="col-md-7">
-                                <h4>Higher Education Department</h4>
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
-                                        <div class="scholarShipCardItem">
-                                            <div class="icon green">
-                                                <i class="fas fa-graduation-cap"></i>
-                                            </div>
-                                            <div class="text">
-                                                <p>Education Level</p>
-                                                <h4>Undergraduate</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
-                                        <div class="scholarShipCardItem">
-                                            <div class="icon purple">
-                                                <i class="fas fa-graduation-cap"></i>
-                                            </div>
-                                            <div class="text">
-                                                <p>Education Level</p>
-                                                <h4>Undergraduate</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
-                                        <div class="scholarShipCardItem">
-                                            <div class="icon blue">
-                                                <i class="fas fa-graduation-cap"></i>
-                                            </div>
-                                            <div class="text">
-                                                <p>Education Level</p>
-                                                <h4>Undergraduate</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            </div>
-                            <div class="col-md-5 d-flex justify-content-end align-items-start">
-                                <button class="btn btn-solid-green mx-1">View Details</button>
-                                <button class="btn btn-solid-blue">Edit Application</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card applayScholarShip">
-                    <div class="card-body">
-                        <h3>Merit Scholarship Program 2024 <span class="scholarShip-status approve"><i
-                                    class="fas fa-check"></i>
-                                Approved</span>
-                            <span class="scholarShip-status pending"><i class="fas fa-history"></i>Under
-                                Review</span>
-                            <span class="scholarShip-status rejected"><i class="fas fa-close"></i>
-                                Rejected</span>
-                        </h3>
-                        </h3>
-                        <div class="row">
-                            <div class="col-md-7">
-                                <h4>Higher Education Department</h4>
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
-                                        <div class="scholarShipCardItem">
-                                            <div class="icon green">
-                                                <i class="fas fa-graduation-cap"></i>
-                                            </div>
-                                            <div class="text">
-                                                <p>Education Level</p>
-                                                <h4>Undergraduate</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
-                                        <div class="scholarShipCardItem">
-                                            <div class="icon purple">
-                                                <i class="fas fa-graduation-cap"></i>
-                                            </div>
-                                            <div class="text">
-                                                <p>Education Level</p>
-                                                <h4>Undergraduate</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
-                                        <div class="scholarShipCardItem">
-                                            <div class="icon blue">
-                                                <i class="fas fa-graduation-cap"></i>
-                                            </div>
-                                            <div class="text">
-                                                <p>Education Level</p>
-                                                <h4>Undergraduate</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-md-5 d-flex justify-content-end align-items-start">
-                                <button class="btn btn-solid-green mx-1">View Details</button>
-                                <button class="btn btn-solid-blue">Edit Application</button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
 
-        <section class="app-user-list">
+            {{-- <div class="row">
+                <div class="col-md-12">
+                    <div class="card applayScholarShip">
+                        <div class="card-body">
+                            <h3>Merit Scholarship Program 2024 <span class="scholarShip-status approve"><i
+                                        class="fas fa-check"></i>
+                                    Approved</span>
+                                <span class="scholarShip-status pending"><i class="fas fa-history"></i>Under
+                                    Review</span>
+                                <span class="scholarShip-status rejected"><i class="fas fa-close"></i>
+                                    Rejected</span>
+                            </h3>
+                            </h3>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <h4>Higher Education Department</h4>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
+                                            <div class="scholarShipCardItem">
+                                                <div class="icon green">
+                                                    <i class="fas fa-graduation-cap"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Education Level</p>
+                                                    <h4>Undergraduate</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
+                                            <div class="scholarShipCardItem">
+                                                <div class="icon purple">
+                                                    <i class="fas fa-graduation-cap"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Education Level</p>
+                                                    <h4>Undergraduate</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
+                                            <div class="scholarShipCardItem">
+                                                <div class="icon blue">
+                                                    <i class="fas fa-graduation-cap"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Education Level</p>
+                                                    <h4>Undergraduate</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-5 d-flex justify-content-end align-items-start">
+                                    <button class="btn btn-solid-green mx-1">View Details</button>
+                                    <button class="btn btn-solid-blue">Edit Application</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card applayScholarShip">
+                        <div class="card-body">
+                            <h3>Merit Scholarship Program 2024 <span class="scholarShip-status approve"><i
+                                        class="fas fa-check"></i>
+                                    Approved</span>
+                                <span class="scholarShip-status pending"><i class="fas fa-history"></i>Under
+                                    Review</span>
+                                <span class="scholarShip-status rejected"><i class="fas fa-close"></i>
+                                    Rejected</span>
+                            </h3>
+                            </h3>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <h4>Higher Education Department</h4>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
+                                            <div class="scholarShipCardItem">
+                                                <div class="icon green">
+                                                    <i class="fas fa-graduation-cap"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Education Level</p>
+                                                    <h4>Undergraduate</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
+                                            <div class="scholarShipCardItem">
+                                                <div class="icon purple">
+                                                    <i class="fas fa-graduation-cap"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Education Level</p>
+                                                    <h4>Undergraduate</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
+                                            <div class="scholarShipCardItem">
+                                                <div class="icon blue">
+                                                    <i class="fas fa-graduation-cap"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Education Level</p>
+                                                    <h4>Undergraduate</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-5 d-flex justify-content-end align-items-start">
+                                    <button class="btn btn-solid-green mx-1">View Details</button>
+                                    <button class="btn btn-solid-blue">Edit Application</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card applayScholarShip">
+                        <div class="card-body">
+                            <h3>Merit Scholarship Program 2024 <span class="scholarShip-status approve"><i
+                                        class="fas fa-check"></i>
+                                    Approved</span>
+                                <span class="scholarShip-status pending"><i class="fas fa-history"></i>Under
+                                    Review</span>
+                                <span class="scholarShip-status rejected"><i class="fas fa-close"></i>
+                                    Rejected</span>
+                            </h3>
+                            </h3>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <h4>Higher Education Department</h4>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
+                                            <div class="scholarShipCardItem">
+                                                <div class="icon green">
+                                                    <i class="fas fa-graduation-cap"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Education Level</p>
+                                                    <h4>Undergraduate</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
+                                            <div class="scholarShipCardItem">
+                                                <div class="icon purple">
+                                                    <i class="fas fa-graduation-cap"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Education Level</p>
+                                                    <h4>Undergraduate</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
+                                            <div class="scholarShipCardItem">
+                                                <div class="icon blue">
+                                                    <i class="fas fa-graduation-cap"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Education Level</p>
+                                                    <h4>Undergraduate</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-5 d-flex justify-content-end align-items-start">
+                                    <button class="btn btn-solid-green mx-1">View Details</button>
+                                    <button class="btn btn-solid-blue">Edit Application</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+
+            {{-- <section class="app-user-list">
             <div class="card">
 
                 <div class="table table-responsive pt-0">
@@ -294,7 +294,6 @@
                 </div>
                 <div class="row p-1">
                     <div class="col-lg-12">
-                        {{-- {!! $model->links() !!} --}}
                         {{ $model->links() }}
 
                     </div>
@@ -305,27 +304,109 @@
 
             <!-- Modal -->
 
-        </section>
+        </section> --}}
+
+            <div class="row">
+                <div class="col-md-12">
+                    @foreach ($model as $data)
+                        <div class="card applayScholarShip mb-3">
+                            <div class="card-body">
+                                <h3>{{ $data->schoarship->name ?? 'Merit Scholarship Program 2024' }}
+                                    @if ($data->status == 'approved')
+                                        <span class="scholarShip-status approve"><i class="fas fa-check"></i>
+                                            Approved</span>
+                                    @elseif ($data->status == 'pending')
+                                        <span class="scholarShip-status pending"><i class="fas fa-history"></i> Under
+                                            Review</span>
+                                    @elseif ($data->status == 'rejected')
+                                        <span class="scholarShip-status rejected"><i class="fas fa-close"></i>
+                                            Rejected</span>
+                                    @endif
+                                </h3>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <h4>{{ $data->user->name ?? 'Higher Education Department' }}</h4>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
+                                                <div class="scholarShipCardItem">
+                                                    <div class="icon green">
+                                                        <i class="fas fa-graduation-cap"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>Education Level</p>
+                                                        <h4>{{ $data->education_level ?? 'Undergraduate' }}</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
+                                                <div class="scholarShipCardItem">
+                                                    <div class="icon purple">
+                                                        <i class="fas fa-graduation-cap"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>Scholarship Type</p>
+                                                        <h4>{{ $data->schoarship->type ?? 'Merit-Based' }}</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 mb-1">
+                                                <div class="scholarShipCardItem">
+                                                    <div class="icon blue">
+                                                        <i class="fas fa-graduation-cap"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>Application ID</p>
+                                                        <h4>{{ $data->id }}</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 d-flex justify-content-end align-items-start">
+                                        <button class="btn btn-solid-green mx-1">View Details</button>
+                                        {{-- <button class="btn btn-solid-blue">Edit Application</button> --}}
+                                        @if ($data->scholarship_id)
+                                            <a href="{{ route('print', ['id' => encrypt($data->scholarship_id)]) }}"
+                                                class="btn btn-solid-blue ">
+                                                <i data-feather="printer"></i> Print
+                                            </a>
+                                        @else
+                                            <span class="text-muted">Scholarship ID not available</span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                    <!-- Pagination -->
+                    <div class="row p-1">
+                        <div class="col-lg-12">
+                            {{ $model->links() }}
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
+        </div>
     </div>
-</div>
 
 @endsection
 
 @section('script')
-<script src="{{ asset(mix('vendors/js/forms/wizard/bs-stepper.min.js')) }}"></script>
-<script src="{{ asset(mix('vendors/js/forms/select/select2.full.min.js')) }}"></script>
-<script src="{{ asset(mix('vendors/js/forms/validation/jquery.validate.min.js')) }}"></script>
+    <script src="{{ asset(mix('vendors/js/forms/wizard/bs-stepper.min.js')) }}"></script>
+    <script src="{{ asset(mix('vendors/js/forms/select/select2.full.min.js')) }}"></script>
+    <script src="{{ asset(mix('vendors/js/forms/validation/jquery.validate.min.js')) }}"></script>
 
-<!-- Page js files -->
-<!-- <script src="{{ asset(mix('js/scripts/forms/form-wizard.js')) }}"></script> -->
+    <!-- Page js files -->
+    <!-- <script src="{{ asset(mix('js/scripts/forms/form-wizard.js')) }}"></script> -->
 
 
 
-<!-- ====== Youth Form Wizard ==== -->
-<script>
-    $(document).ready(function() {
+    <!-- ====== Youth Form Wizard ==== -->
+    <script>
+        $(document).ready(function() {
 
             $.ajaxSetup({
                 headers: {
@@ -754,6 +835,6 @@
             });
 
         });
-</script>
+    </script>
 
 @stop

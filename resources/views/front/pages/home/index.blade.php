@@ -119,7 +119,7 @@
             <div class="row mt-5">
                 @foreach ($featuredScholarships as $data)
                     <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3 mb-3">
-                        <div class="card feature-scholarship-card">
+                        <div class="card feature-scholarship-card h-100">
                             {{-- <img src="./assets/imgs/scholar/s-2.png" class="card-img-top" alt="..."> --}}
                             <img src='{{ $data->getFirstMediaUrl('scholarship-mdeia') }}' class="card-img-top"
                                 alt="..." />

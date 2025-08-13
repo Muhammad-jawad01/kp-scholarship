@@ -10,7 +10,7 @@
 
     <div class="top_header">
         <div class="image">
-            <img src="{{ asset('assets/print/logo.png') }}" alt="">
+            <img src="{{ asset('front_assets/imgs/logo_h.svg') }}" alt="">
         </div>
         <h4>APPLICATION FORM FOR THE AWARD OF <br />
             KHYBER PAKHTUNKHWA KP Scholarship
@@ -23,7 +23,7 @@
     </div>
     <div class="top_header_print">
         <div class="image">
-            <img src="{{ asset('assets/print/logo.png') }}" alt="">
+            <img src="{{ asset('front_assets/imgs/logo_h.svg') }}" alt="">
         </div>
         <h4>APPLICATION FORM FOR THE AWARD OF <br />
             KHYBER PAKHTUNKHWA EDUCATION FOUNDATION <br />

@@ -26,7 +26,7 @@ class PagesController extends Controller
   public function faq()
   {
     $breadcrumbs = [['link' => "/", 'name' => "Home"], ['link' => "javascript:void(0)", 'name' => "Pages"], ['name' => "FAQ"]];
-    return view('/content/pages/page-faq', ['breadcrumbs' => $breadcrumbs]);
+    return view('/content.pages.page-faq', ['breadcrumbs' => $breadcrumbs]);
   }
 
   // Knowledge Base

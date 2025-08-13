@@ -39,7 +39,7 @@
             </div>
         </section>
 
-        <div class="row m-0 p-0">
+        {{-- <div class="row m-0 p-0">
             <div class="col-md-8 mx-auto">
                 <div class="card applayScholarShip">
                     <div class="card-body">
@@ -101,7 +101,7 @@
                 </div>
 
             </div>
-        </div>
+        </div> --}}
 
         <!-- Find scholarship -->
         {{-- <section class="find-scholarship ">

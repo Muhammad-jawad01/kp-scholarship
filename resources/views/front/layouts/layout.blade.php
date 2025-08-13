@@ -93,6 +93,9 @@
 
         });
     </script>
+
+    {{-- Page-level scripts injected via @push('scripts') --}}
+    @stack('scripts')
 </body>
 
 </html>
